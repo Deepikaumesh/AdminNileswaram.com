@@ -138,7 +138,9 @@ class _Admin_Advertisemen_RegtState extends State<Admin_Advertisemen_Regt> {
           },
           child: Icon(
             Icons.arrow_back_rounded,
-            color: Colors.red.shade900, // add custom icons also
+            color: Colors.red.shade900,
+            size: 33,// add custom icons also
+// add custom icons also
           ),
         ),
       ),

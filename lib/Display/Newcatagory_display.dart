@@ -90,7 +90,7 @@ class _New_CatState extends State<New_Cat> {
         style: GoogleFonts.prompt(fontSize: 22),
       ),
       leading: IconButton(
-        icon: Icon(Icons.arrow_back_rounded),
+        icon: Icon(Icons.arrow_back_rounded,  size: 35,),
         onPressed: () {
           Navigator.pop(context);
         },

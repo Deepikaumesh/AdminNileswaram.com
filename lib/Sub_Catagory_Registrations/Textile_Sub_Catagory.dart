@@ -23,7 +23,7 @@ class _Textile_SubState extends State<Textile_Sub> {
         elevation: 0,centerTitle: true,leading: GestureDetector(
             onTap: () { Navigator.pop(context);},
             child: Icon(
-              Icons.arrow_back_rounded,color: Colors.red.shade900,  // add custom icons also
+              Icons.arrow_back_rounded,color: Colors.red.shade900,    size: 35,// add custom icons also
             ),
           ),),
       body: Container(
@@ -37,53 +37,78 @@ class _Textile_SubState extends State<Textile_Sub> {
                 height:MediaQuery.of(context).size.height/5,
                 width: MediaQuery.of(context).size.width/3,
               ),
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Family_Store_RegPage()));
-                  }, child:Text("Family Store",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Family_Store_RegPage()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Family_Store_RegPage()));
+                    }, child:Text("Family Store",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
 
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Gents_Section()));
-                  }, child:Text("Gents",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Gents_Section()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Gents_Section()));
+                    }, child:Text("Gents",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
 
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Ladies_Section()));
-                  }, child:Text("Ladies",style: GoogleFonts.prompt(fontSize: 21,),)))),
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Kids_Section()));
-                  }, child:Text("Kids",style: GoogleFonts.prompt(fontSize: 21,),)))),
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>UnderGarments_Section()));
-                  }, child:Text("Under Garments",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Ladies_Section()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Ladies_Section()));
+                    }, child:Text("Ladies",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Kids_Section()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Kids_Section()));
+                    }, child:Text("Kids",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>UnderGarments_Section()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>UnderGarments_Section()));
+                    }, child:Text("Under Garments",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
 
 
 

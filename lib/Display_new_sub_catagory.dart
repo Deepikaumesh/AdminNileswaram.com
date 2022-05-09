@@ -4,11 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart';
 
-//Creating a class user to store the data;
+
 class User {
-  // final String id;
+  final String catname;
   final String name;
   final String address;
   final String phone;
@@ -21,7 +20,7 @@ class User {
   final String blood;
 
   User({
-    // required this.id,
+    required this.catname,
     required this.name,
     required this.address,
     required this.phone,
@@ -35,45 +34,50 @@ class User {
   });
 }
 
-class Grocery_Display extends StatefulWidget {
-  @override
-  _Grocery_DisplayState createState() => _Grocery_DisplayState();
+Future<List<User>> getRequest() async {
+  //replace your restFull API here.
+  String url =
+      "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/New_subcatagory_display.php";
+  // old  table textile
+  // "https://astrasoftware.in/directoryapp/Nileswaram.com/Catagory_Display/Textile/textile_display.php";
+
+  final response = await http.get(Uri.parse(url));
+
+  var responseData = json.decode(response.body);
+
+  //Creating a list to store input data;
+  List<User> users = [];
+  for (var singleUser in responseData) {
+    User user = User(
+      //id:  singleUser["id"].toString(),
+      catname: singleUser["catname"].toString(),
+      name: singleUser["name"].toString(),
+      address: singleUser["address"].toString(),
+      phone: singleUser["phone"].toString(),
+      mobile: singleUser["mobile"].toString(),
+      blood: singleUser["blood"].toString(),
+      insta: singleUser["insta"].toString(),
+      website: singleUser["website"].toString(),
+      facebook: singleUser["facebook"].toString(),
+      email: singleUser["email"].toString(),
+      watsap: singleUser["watsap"].toString(),
+    );
+
+    //Adding user to the list.
+    users.add(user);
+  }
+  return users;
 }
 
-class _Grocery_DisplayState extends State<Grocery_Display> {
-  Future<List<User>> getRequest() async {
-    //replace your restFull API here.
-    String url =
-        "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Display/Grocery/grocery.php";
-    // old  table textile
-    // "https://astrasoftware.in/directoryapp/Nileswaram.com/Catagory_Display/Textile/textile_display.php";
 
-    final response = await http.get(Uri.parse(url));
+class New_Sub_Cat extends StatefulWidget {
+  const New_Sub_Cat({Key? key}) : super(key: key);
 
-    var responseData = json.decode(response.body);
+  @override
+  _New_Sub_CatState createState() => _New_Sub_CatState();
+}
 
-    //Creating a list to store input data;
-    List<User> users = [];
-    for (var singleUser in responseData) {
-      User user = User(
-        //id:  singleUser["id"].toString(),
-          name: singleUser["name"].toString(),
-          address: singleUser["address"].toString(),
-          phone: singleUser["phone"].toString(),
-          mobile: singleUser["mobile"].toString(),
-          blood: singleUser["blood"].toString(),
-          insta: singleUser["insta"].toString(),
-          website: singleUser["website"].toString(),
-          facebook: singleUser["facebook"].toString(),
-          email: singleUser["email"].toString(),
-          watsap: singleUser["watsap"].toString());
-
-      //Adding user to the list.
-      users.add(user);
-    }
-    return users;
-  }
-
+class _New_Sub_CatState extends State<New_Sub_Cat> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -82,11 +86,13 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
           centerTitle: true,
           backgroundColor: Colors.pink.shade800,
           title: Text(
-            "Grocery",
+            "View More Sub Catagory",
             style: GoogleFonts.prompt(fontSize: 22),
           ),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
+            icon: Icon(Icons.arrow_back_rounded,            size: 33,// add custom icons also
+              // add custom icons also
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -114,8 +120,7 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                           "Data Loading Please Wait!",
                           style: TextStyle(),
                         ),
-                        Text("Check your Network connection!")
-
+                        Text("Check your Network connection!"),
                       ],
                     ),
                   ),
@@ -145,17 +150,25 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children:[
-                                        Container(
-                                          width: 50,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            image: DecorationImage(
-                                                image: AssetImage('assets/grow.png'),
-                                                fit: BoxFit.fill
-                                            ),
-                                          ),
+                                        // Container(
+                                        //   width: 30,
+                                        //   height: 30,
+                                        //   decoration: BoxDecoration(
+                                        //     shape: BoxShape.rectangle,
+                                        //     image: DecorationImage(
+                                        //         image: AssetImage('assets/beauty-treatment.png'),
+                                        //         fit: BoxFit.fill
+                                        //     ),
+                                        //   ),
+                                        // ),
+                                        Text(
+                                          snapshot.data[index].catname,
+                                          style: GoogleFonts.lora(
+                                              fontSize: 25,
+                                              color: Colors.blueGrey.shade900),
                                         ),
+
+
                                         SizedBox(width: 15,),
                                         Text(
                                           snapshot.data[index].name,
@@ -165,7 +178,8 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                                         ),
                                       ],),
                                   ),
-                                  Text(snapshot.data[index].address,
+                                  Text(
+                                    snapshot.data[index].address,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 6,
                                     style: GoogleFonts.prompt(
@@ -196,8 +210,6 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                                         width: 20,
                                       ),
                                       Text(snapshot.data[index].mobile),
-
-
                                     ],
                                   ),
                                   // Row(
@@ -274,14 +286,13 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                                           Text(snapshot.data[index].watsap),
                                         ],
                                       ),
-                                      Column(
-                                          children: [
+                                      Column(children: [
                                         Image.asset(
                                           "assets/facebook.png",
                                           height: 50,
                                           width: 30,
                                         ),
-                                     Text(snapshot.data[index].facebook),
+                                        Text(snapshot.data[index].facebook),
                                       ]),
                                       Column(children: [
                                         Image.asset(
@@ -289,14 +300,14 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                                           height: 50,
                                           width: 30,
                                         ),
-                                       Text(snapshot.data[index].insta),
-
+                                        Text(snapshot.data[index].insta),
                                       ]),
                                     ],
                                   ),
                                   SizedBox(
                                     height: 5,
                                   ),
+
                                 ],
                               ),
                             ),
@@ -312,4 +323,3 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
     );
   }
 }
-//

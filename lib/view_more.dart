@@ -13,6 +13,7 @@ import 'Admin_Display Catagory/MedicalShop_Display.dart';
 import 'Admin_Display_Sub_catagory/Furniture_Sub_Catagory_Display.dart';
 import 'Admin_HomPage.dart';
 import 'Display/Newcatagory_display.dart';
+import 'Display_new_sub_catagory.dart';
 
 
 
@@ -36,7 +37,7 @@ class View_MoreState extends State<View_More> {
         leading: GestureDetector(
           onTap: () { Navigator.pop(context);},
           child: Icon(
-            Icons.arrow_back_rounded,color: Colors.red.shade900,  // add custom icons also
+            Icons.arrow_back_rounded,color: Colors.red.shade900, size: 35, // add custom icons also
           ),
         ), ),
 
@@ -315,7 +316,15 @@ class View_MoreState extends State<View_More> {
               },
               child: Text('View More'),
 
-            )
+            ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>New_Sub_Cat()));
+
+                },
+                child: Text('View More Sub Catagory'),
+
+              )
             ],
           ),
         ),

@@ -143,7 +143,8 @@ class _Admin_News_RegState extends State<Admin_News_Reg> {
           },
           child: Icon(
             Icons.arrow_back_rounded,
-            color: Colors.red.shade900, // add custom icons also
+            color: Colors.red.shade900,
+            size: 35,// add custom icons also
           ),
         ),
       ),

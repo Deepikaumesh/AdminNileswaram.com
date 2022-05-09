@@ -64,11 +64,13 @@ class _Admin_News_DisplayState extends State<Admin_News_Display> {
             style: GoogleFonts.prompt(fontSize: 22),
           ),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
+            icon: Icon(Icons.arrow_back_rounded,  size: 35,),
             onPressed: () {
               Navigator.pop(context);
             },
+
           ),
+
         ),
         body: Container(
           padding: EdgeInsets.all(16.0),

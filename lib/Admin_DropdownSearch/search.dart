@@ -64,9 +64,19 @@ class _Admin_Searchbar_HomeState extends State<Admin_Searchbar_Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red.shade900,
-        title: Text("Search for shops/business", style: GoogleFonts.prompt()),
         elevation: 0,
+        centerTitle: true,
+        backgroundColor:  Colors.red.shade900,
+        title: Text(
+          "Search for Shops/Business",
+          style: GoogleFonts.prompt(fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_rounded,size: 35,),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Column(
         children: [

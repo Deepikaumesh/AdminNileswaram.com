@@ -7,12 +7,12 @@ import 'package:http/http.dart' as http;
 
 //import 'getdata.dart';
 
-class NewAdd_Catagory extends StatefulWidget {
+class NewSubCatagory extends StatefulWidget {
   @override
-  _NewAdd_CatagoryState createState() => _NewAdd_CatagoryState();
+  _NewSubCatagoryState createState() => _NewSubCatagoryState();
 }
 
-class _NewAdd_CatagoryState extends State<NewAdd_Catagory> {
+class _NewSubCatagoryState extends State<NewSubCatagory> {
   TextEditingController catname = new TextEditingController();
   TextEditingController name = new TextEditingController();
   TextEditingController address = new TextEditingController();
@@ -28,11 +28,11 @@ class _NewAdd_CatagoryState extends State<NewAdd_Catagory> {
   late bool status;
   late String message;
   //String serverUrl = "https://astrasoftware.in/directoryapp/Nileswaram.com/more_insert_test.php";
-  String serverUrl = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/catagoryReg.php";
+  String serverUrl = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/subcatagory_Reg.php";
 
   @override
   void initState() {
-  catname = TextEditingController();
+    catname = TextEditingController();
     name = TextEditingController();
     address = TextEditingController();
     blood = TextEditingController();
@@ -114,7 +114,7 @@ class _NewAdd_CatagoryState extends State<NewAdd_Catagory> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: catname,
-        decoration: InputDecoration(labelText: "Enter Category",
+        decoration: InputDecoration(labelText: "Enter Sub Category",
           // prefix: Text("(do not remove!)",),
         ),
         keyboardType: TextInputType.text,
@@ -214,7 +214,7 @@ class _NewAdd_CatagoryState extends State<NewAdd_Catagory> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: facebook,
-        decoration: InputDecoration(labelText: "Enter Facebook Id"),
+        decoration: InputDecoration(labelText: "Enter Facebook Id/Link"),
         keyboardType: TextInputType.text,
       ),
     );
@@ -238,11 +238,13 @@ class _NewAdd_CatagoryState extends State<NewAdd_Catagory> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: Text("New Category Registration",style: GoogleFonts.prompt(color: Colors.red.shade900),),backgroundColor: Colors.white,
+      appBar: AppBar(title: Text("New Sub Category Registration",style: GoogleFonts.prompt(color: Colors.red.shade900),),backgroundColor: Colors.white,
         elevation: 0,centerTitle: true,leading: GestureDetector(
           onTap: () { Navigator.pop(context);},
           child: Icon(
-            Icons.arrow_back_rounded,color: Colors.red.shade900,    size: 35,// add custom icons also
+            Icons.arrow_back_rounded,color: Colors.red.shade900,
+            size: 33,// add custom icons also
+// add custom icons also
           ),
         ),),
       body: Container(
@@ -314,7 +316,7 @@ class Dataa {
   factory Dataa.fromjson(Map<String,dynamic>json)
   {
     return Dataa(
-      catname: json['catname'],
+        catname: json['catname'],
         name:json['name'] ,
         address:json['email'],
         //phone: 'phone',

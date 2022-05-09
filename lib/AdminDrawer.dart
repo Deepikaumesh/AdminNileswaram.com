@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'About_Us.dart';
+import 'AddNewSubcatagory.dart';
 import 'Add_catagory.dart';
 import 'Admin_About_Us.dart';
 import 'Admin_version.dart';
@@ -63,7 +65,7 @@ class AdminDrawer extends StatelessWidget {
         ListTile(
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => AdminAbout_Us()));
+                context, MaterialPageRoute(builder: (context) => About_Us()));
           },
           leading: Icon(
             Icons.menu,
@@ -138,7 +140,7 @@ class AdminDrawer extends StatelessWidget {
             Icons.web_asset_sharp,
             color: Colors.blueGrey.shade900,
           ),
-          title: Text("Advertaisement Registration",
+          title: Text("Advertisement Registration",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 
@@ -151,12 +153,26 @@ class AdminDrawer extends StatelessWidget {
             Icons.menu,
             color: Colors.blueGrey.shade900,
           ),
-          title: Text("Add New Catagory",
+          title: Text("Add New Category",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+        ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NewSubCatagory()));
+          },
+          leading: Icon(
+            Icons.menu,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Add New sub Category",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 
 
-            ]),
+
+
+      ]),
     );
   }
 }

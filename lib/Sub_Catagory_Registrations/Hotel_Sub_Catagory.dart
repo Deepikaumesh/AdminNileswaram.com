@@ -22,7 +22,7 @@ class _Hotel_SubState extends State<Hotel_Sub> {
         elevation: 0,centerTitle: true,leading: GestureDetector(
             onTap: () { Navigator.pop(context);},
             child: Icon(
-              Icons.arrow_back_rounded,color: Colors.red.shade900,  // add custom icons also
+              Icons.arrow_back_rounded,color: Colors.red.shade900,  size: 35,  // add custom icons also
             ),
           ),),
       body: Container(
@@ -36,25 +36,35 @@ class _Hotel_SubState extends State<Hotel_Sub> {
                 height:MediaQuery.of(context).size.height/5,
                 width: MediaQuery.of(context).size.width/3,
               ),
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Veg_Catagory()));
-                  }, child:Text("Veg Hotel",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Veg_Catagory()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Veg_Catagory()));
+                    }, child:Text("Veg Hotel",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
 
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Non_Veg_Catagory()));
-                  }, child:Text("Non Veg Hotel",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Non_Veg_Catagory()));
+                },
+                child: Card(
+                    margin: EdgeInsets.all(30),
+                    shape:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black12)
+                    ),
+                    child: Center(child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Non_Veg_Catagory()));
+                    }, child:Text("Non Veg Hotel",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              ),
 
             ],
           ),

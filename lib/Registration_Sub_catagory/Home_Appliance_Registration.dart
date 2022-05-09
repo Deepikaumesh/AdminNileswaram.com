@@ -111,7 +111,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       child: TextField(
         controller: name,
 
-        decoration: InputDecoration(labelText: "Enter name",prefix: Text("(do not remove!)",),),
+        decoration: InputDecoration(labelText: "Enter Name",prefix: Text("(do not remove!)",),),
         keyboardType: TextInputType.text,
       ),
     );
@@ -122,7 +122,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: address,
-        decoration: InputDecoration(labelText: "Enter address"),
+        decoration: InputDecoration(labelText: "Enter Address"),
         keyboardType: TextInputType.multiline,
         maxLines: 3,
       ),
@@ -133,7 +133,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: blood,
-        decoration: InputDecoration(labelText: "Enter blood"),
+        decoration: InputDecoration(labelText: "*Enter Blood Group"),
         keyboardType: TextInputType.text,
       ),
     );
@@ -144,7 +144,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: phone,
-        decoration: InputDecoration(labelText: "Enter phone"),
+        decoration: InputDecoration(labelText: "*Enter Phone Number"),
         keyboardType: TextInputType.phone,
       ),
     );
@@ -154,7 +154,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: email,
-        decoration: InputDecoration(labelText: "Enter email"),
+        decoration: InputDecoration(labelText: "Enter Email Id"),
         keyboardType: TextInputType.text,
       ),
     );
@@ -165,7 +165,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: mobile,
-        decoration: InputDecoration(labelText: "Enter mobile"),
+        decoration: InputDecoration(labelText: "Enter Mobile Number"),
         keyboardType: TextInputType.phone,
       ),
     );
@@ -176,7 +176,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: watsap,
-        decoration: InputDecoration(labelText: "Enter Watsap Number"),
+        decoration: InputDecoration(labelText: "Enter Watsapp Number"),
         keyboardType: TextInputType.number,
       ),
     );
@@ -186,7 +186,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: website,
-        decoration: InputDecoration(labelText: "Enter Wesite Address"),
+        decoration: InputDecoration(labelText: "Enter Website Address"),
         keyboardType: TextInputType.text,
       ),
     );
@@ -197,7 +197,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: facebook,
-        decoration: InputDecoration(labelText: "Enter facebook Id"),
+        decoration: InputDecoration(labelText: "Enter Facebook Id/Link"),
         keyboardType: TextInputType.text,
       ),
     );
@@ -225,7 +225,7 @@ class _HomeAplliance_RegPageState extends State<HomeAplliance_RegPage> {
         elevation: 0,centerTitle: true,leading: GestureDetector(
           onTap: () { Navigator.pop(context);},
           child: Icon(
-            Icons.arrow_back_rounded,color: Colors.red.shade900,  // add custom icons also
+            Icons.arrow_back_rounded,color: Colors.red.shade900,  size: 35,  // add custom icons also
           ),
         ),),
       body: Container(

@@ -35,7 +35,8 @@ class _Business_Reg_CatagoryState extends State<Business_Reg_Catagory> {
           leading: GestureDetector(
             onTap: () { Navigator.pop(context);},
             child: Icon(
-              Icons.arrow_back_rounded,color: Colors.red.shade900,  // add custom icons also
+              Icons.arrow_back_rounded,color: Colors.red.shade900,
+              size: 35,// add custom icons also
             ),
           ), ),
         body: Container(
@@ -47,116 +48,171 @@ class _Business_Reg_CatagoryState extends State<Business_Reg_Catagory> {
               //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                //SizedBox(height: 20,),
-                Card(
-                  margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_Sub()));
+                  },
+                  child: Card(
+                    margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(color: Colors.black12)
           ),
-                    child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_Sub()));
-                    }, child:Text("Textile",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                      child: Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_Sub()));
+                      }, child:Text("Textile",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
-                   // margin: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
-                  margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child: Center(child:TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub()));
-                    }, child:Text("Hotel",style: GoogleFonts.prompt(fontSize: 21,),))),),
-
-                Card(
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub()));
+                  },
+                  child: Card(
+                     // margin: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
                     margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Grocery_Reg_Page()));
-                    }, child:Text("Grocery",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child: Center(child:TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub()));
+                      }, child:Text("Hotel",style: GoogleFonts.prompt(fontSize: 21,),))),),
+                ),
 
-                Card(
-                  margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child:Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Furniture_Sub()));
-                    }, child:Text("Furniture",style: GoogleFonts.prompt(fontSize: 21,),))),),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Grocery_Reg_Page()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child: Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Grocery_Reg_Page()));
+                      }, child:Text("Grocery",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Furniture_Sub()));
+                  },
+                  child: Card(
                     margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Hardware_Reg_Page()));
-                    }, child:Text("Hardware",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child:Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Furniture_Sub()));
+                      }, child:Text("Furniture",style: GoogleFonts.prompt(fontSize: 21,),))),),
+                ),
 
-                Card(
-                    margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child:Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Beauty_Parler_RegPage()));
-                    }, child:Text("Beauty Parler",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Hardware_Reg_Page()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child: Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Hardware_Reg_Page()));
+                      }, child:Text("Hardware",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
-                    margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Barbershop_RegPage()));
-                    }, child:Text("Barber Shop",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Beauty_Parler_RegPage()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child:Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Beauty_Parler_RegPage()));
+                      }, child:Text("Beauty Parler",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
-                    margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeAplliance_RegPage()));
-                    }, child:Text("Home Appliance",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Barbershop_RegPage()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child: Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Barbershop_RegPage()));
+                      }, child:Text("Barber Shop",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
-                    margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>MedicalShop_RegPage()));
-                    }, child:Text("Medical Shop",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeAplliance_RegPage()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child: Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeAplliance_RegPage()));
+                      }, child:Text("Home Appliance",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
-                    margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child:Center(child:  TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Fruits$Veg_RegPage()));
-                    }, child:Text("Fruits and Vegitables",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>MedicalShop_RegPage()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child: Center(child: TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>MedicalShop_RegPage()));
+                      }, child:Text("Medical Shop",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
-                Card(
-                    margin: EdgeInsets.all(30),
-                    shape:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black12)
-                    ),
-                    child:Center(child:  TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>hospital_Reg_Page()));
-                    }, child:Text("Hospital",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                GestureDetector(
+                  onTap: (){
+
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child:Center(child:  TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>Fruits$Veg_RegPage()));
+                      }, child:Text("Fruits and Vegitables",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
+
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>hospital_Reg_Page()));
+                  },
+                  child: Card(
+                      margin: EdgeInsets.all(30),
+                      shape:  OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black12)
+                      ),
+                      child:Center(child:  TextButton(onPressed: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>hospital_Reg_Page()));
+                      }, child:Text("Hospital",style: GoogleFonts.prompt(fontSize: 21,),)))),
+                ),
 
 
 

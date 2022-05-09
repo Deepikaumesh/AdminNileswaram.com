@@ -22,7 +22,7 @@ class _Furniture_SubState extends State<Furniture_Sub> {
         elevation: 0,centerTitle: true,leading: GestureDetector(
             onTap: () { Navigator.pop(context);},
             child: Icon(
-              Icons.arrow_back_rounded,color: Colors.red.shade900,  // add custom icons also
+              Icons.arrow_back_rounded,color: Colors.red.shade900,  size: 35,  // add custom icons also
             ),
           ),),
       body: Container(
