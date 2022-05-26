@@ -5,14 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
+import '../Upload Shop Image/textile_image.dart';
+
 //import 'getdata.dart';
 
-class Family_Store_RegPage extends StatefulWidget {
+class Acupuncture_RegPage extends StatefulWidget {
   @override
-  _Family_Store_RegPageState createState() => _Family_Store_RegPageState();
+  _Acupuncture_RegPageState createState() => _Acupuncture_RegPageState();
 }
 
-class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
+class _Acupuncture_RegPageState extends State<Acupuncture_RegPage> {
   TextEditingController name = new TextEditingController();
   TextEditingController address = new TextEditingController();
   TextEditingController blood = new TextEditingController();
@@ -23,15 +25,16 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
   TextEditingController website = new TextEditingController();
   TextEditingController facebook = new TextEditingController();
   TextEditingController insta = new TextEditingController();
+  TextEditingController other_pro = new TextEditingController();
 
   late bool status;
   late String message;
   //String serverUrl = "https://astrasoftware.in/directoryapp/Nileswaram.com/more_insert_test.php";
-  String serverUrl = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Registration/familystore_RegPage.php";
+  String serverUrl = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Registration/A_REg/acupuncture.php";
 
   @override
   void initState() {
-    name = TextEditingController(text: 'textile-');
+    name = TextEditingController(text: '(acupuncture)');
     address = TextEditingController();
     blood = TextEditingController();
     phone = TextEditingController();
@@ -41,6 +44,7 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
     website = TextEditingController();
     facebook = TextEditingController();
     insta = TextEditingController();
+    other_pro= TextEditingController();
 
 
     status = false;
@@ -64,6 +68,7 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
       "website":website.text,
       "facebook":facebook.text,
       "insta":insta.text,
+      "other_pro":other_pro.text,
 
 
     });
@@ -90,7 +95,7 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
         website.clear();
         facebook.clear();
         insta.clear();
-
+        other_pro.clear();
 
         setState(() {
           status = true;
@@ -207,9 +212,36 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller:insta,
-        decoration: InputDecoration(labelText: "Enter Instagram Id"),
+        decoration: InputDecoration(labelText: "Enter Instagram Id",),
         keyboardType: TextInputType.text,
       ),
+    );
+  }
+  Widget _buildother_pro() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      child:
+      TextField(
+        controller:other_pro,
+        decoration: InputDecoration(labelText: "Enter Your other product details",
+   border: new OutlineInputBorder(
+    borderSide: new BorderSide(color: Colors.teal),
+        ),
+    ),
+    keyboardType: TextInputType.multiline,
+       maxLines: 10,
+      ),
+   //    TextField(
+   //      textAlignVertical: TextAlignVertical.top,
+   //      expands: true,
+   //      maxLines: null,
+   //      decoration: InputDecoration(
+   //          border: OutlineInputBorder(
+   //            borderRadius: BorderRadius.circular(3),
+   //          ),
+   //          hintText: 'Enter Your other product details'),
+   //    ),
+
     );
   }
 
@@ -220,7 +252,7 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: Text("Family Store Registration",style: GoogleFonts.prompt(color: Colors.red.shade900),),backgroundColor: Colors.white,
+      appBar: AppBar(title: Text("Acupuncture Registration",style: GoogleFonts.prompt(color: Colors.red.shade900),),backgroundColor: Colors.white,
         elevation: 0,centerTitle: true,leading: GestureDetector(
           onTap: () { Navigator.pop(context);},
           child: Icon(
@@ -243,6 +275,20 @@ class _Family_Store_RegPageState extends State<Family_Store_RegPage> {
                 _buildfacebook(),
                 _buildinsta(),
                 _buildblood(),
+                SizedBox(height: 10),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //   children: [
+                //     Text("Upload Image"),
+                //     TextButton(onPressed: (){
+                //       Navigator.push(context, MaterialPageRoute(builder: (context)=>Textile_image()));
+                //     }, child: Text("Choose File")),
+                //
+                //   ],
+                // ),
+                _buildother_pro(),
+                SizedBox(height: 10,),
+
                 SizedBox(height: 10,),
                 RaisedButton(
                   shape: StadiumBorder(),

@@ -5,14 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
+import '../Upload Shop Image/textile_image.dart';
+
 //import 'getdata.dart';
 
-class Veg_Catagory extends StatefulWidget {
+class Textile_RegPage extends StatefulWidget {
   @override
-  _Veg_CatagoryState createState() => _Veg_CatagoryState();
+  _Textile_RegPageState createState() => _Textile_RegPageState();
 }
 
-class _Veg_CatagoryState extends State<Veg_Catagory> {
+class _Textile_RegPageState extends State<Textile_RegPage> {
   TextEditingController name = new TextEditingController();
   TextEditingController address = new TextEditingController();
   TextEditingController blood = new TextEditingController();
@@ -23,15 +25,16 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
   TextEditingController website = new TextEditingController();
   TextEditingController facebook = new TextEditingController();
   TextEditingController insta = new TextEditingController();
+  TextEditingController other_pro = new TextEditingController();
 
   late bool status;
   late String message;
   //String serverUrl = "https://astrasoftware.in/directoryapp/Nileswaram.com/more_insert_test.php";
-  String serverUrl = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Registration/Veg_Hotel_Registration.php";
+  String serverUrl = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Registration/Textile_RegPage.php";
 
   @override
   void initState() {
-    name = TextEditingController(text: 'veg hotel-');
+    name = TextEditingController(text: 'textile-');
     address = TextEditingController();
     blood = TextEditingController();
     phone = TextEditingController();
@@ -41,6 +44,7 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
     website = TextEditingController();
     facebook = TextEditingController();
     insta = TextEditingController();
+    other_pro= TextEditingController();
 
 
     status = false;
@@ -64,6 +68,7 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
       "website":website.text,
       "facebook":facebook.text,
       "insta":insta.text,
+      "other_pro":other_pro.text,
 
 
     });
@@ -90,7 +95,7 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
         website.clear();
         facebook.clear();
         insta.clear();
-
+        other_pro.clear();
 
         setState(() {
           status = true;
@@ -132,7 +137,7 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: blood,
-        decoration: InputDecoration(labelText: "*Enter Blood Group"),
+        decoration: InputDecoration(labelText: "* Enter Blood Group"),
         keyboardType: TextInputType.text,
       ),
     );
@@ -143,7 +148,7 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller: phone,
-        decoration: InputDecoration(labelText: "*Enter Phone Number"),
+        decoration: InputDecoration(labelText: "* Enter Phone Number"),
         keyboardType: TextInputType.phone,
       ),
     );
@@ -207,9 +212,36 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: TextField(
         controller:insta,
-        decoration: InputDecoration(labelText: "Enter Instagram Id"),
+        decoration: InputDecoration(labelText: "Enter Instagram Id",),
         keyboardType: TextInputType.text,
       ),
+    );
+  }
+  Widget _buildother_pro() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      child:
+      TextField(
+        controller:other_pro,
+        decoration: InputDecoration(labelText: "Enter Your other product details",
+   border: new OutlineInputBorder(
+    borderSide: new BorderSide(color: Colors.teal),
+        ),
+    ),
+    keyboardType: TextInputType.multiline,
+       maxLines: 10,
+      ),
+   //    TextField(
+   //      textAlignVertical: TextAlignVertical.top,
+   //      expands: true,
+   //      maxLines: null,
+   //      decoration: InputDecoration(
+   //          border: OutlineInputBorder(
+   //            borderRadius: BorderRadius.circular(3),
+   //          ),
+   //          hintText: 'Enter Your other product details'),
+   //    ),
+
     );
   }
 
@@ -220,7 +252,7 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: Text("Veg Hotel Registration",style: GoogleFonts.prompt(color: Colors.red.shade900),),backgroundColor: Colors.white,
+      appBar: AppBar(title: Text("Textile Shop Registration",style: GoogleFonts.prompt(color: Colors.red.shade900),),backgroundColor: Colors.white,
         elevation: 0,centerTitle: true,leading: GestureDetector(
           onTap: () { Navigator.pop(context);},
           child: Icon(
@@ -243,13 +275,27 @@ class _Veg_CatagoryState extends State<Veg_Catagory> {
                 _buildfacebook(),
                 _buildinsta(),
                 _buildblood(),
+                SizedBox(height: 10),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //   children: [
+                //     Text("Upload Image"),
+                //     TextButton(onPressed: (){
+                //       Navigator.push(context, MaterialPageRoute(builder: (context)=>Textile_image()));
+                //     }, child: Text("Choose File")),
+                //
+                //   ],
+                // ),
+                _buildother_pro(),
+                SizedBox(height: 10,),
+
                 SizedBox(height: 10,),
                 RaisedButton(
                   shape: StadiumBorder(),
 
                   color: Colors.red.shade900,
                   child: Padding(padding:EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                      child: Text("Submit",style: GoogleFonts.prompt(color: Colors.white,fontSize: 25),)),
+                  child: Text("Submit",style: GoogleFonts.prompt(color: Colors.white,fontSize: 25),)),
                   onPressed: () {
                     setState(() {
                     });
@@ -278,7 +324,7 @@ class Dataa {
   //late int id;
   late bool name;
   late bool address;
-  late String phone;
+ late String phone;
   late String blood;
   late String email;
 
@@ -293,11 +339,11 @@ class Dataa {
   factory Dataa.fromjson(Map<String,dynamic>json)
   {
     return Dataa(
-        name:json['name'] ,
-        address:json['email'],
-        //phone: 'phone',
-        blood: 'blood', phone: 'phone',
-        email: 'email');
+      name:json['name'] ,
+      address:json['email'],
+      //phone: 'phone',
+      blood: 'blood', phone: 'phone',
+    email: 'email');
     //id: json['id']);
 
   }
