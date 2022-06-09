@@ -15,11 +15,16 @@ import 'Display/Adminnews_Display.dart';
 class Admin_HomePage extends StatefulWidget {
   const Admin_HomePage({Key? key}) : super(key: key);
 
+
   @override
   _Admin_HomePageState createState() => _Admin_HomePageState();
 }
 
 class _Admin_HomePageState extends State<Admin_HomePage> {
+
+  bool isReadmore= false;
+
+
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -35,7 +40,7 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Nileshwaram.com",
+          "Nileswaram.com",
           style: GoogleFonts.aclonica(
             color: Colors.red.shade900,
             fontSize: 22.0,
@@ -102,7 +107,9 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
       ),
       body: Column(
         children: [
+
           Admin_Search_Bar(),
+
           Expanded(
             child: Container(
               child: SingleChildScrollView(
@@ -126,24 +133,28 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                     ),
                     // Carousel(),
 
-                    News(),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Admin_News_Display()));
-                        },
-                        child: Text(
-                          "View More News>>",
-                          style: GoogleFonts.quicksand(
-                              color: Colors.blue, fontWeight: FontWeight.bold),
-                        )),
+              //      News(),
+
+                    News_Display(),
+
+
+                    // TextButton(
+                    //     onPressed: () {
+                    //       Navigator.push(
+                    //           context,
+                    //           MaterialPageRoute(
+                    //               builder: (context) => News_Display()));
+                    //     },
+                    //     child: Text(
+                    //       "View More News>>",
+                    //       style: GoogleFonts.quicksand(
+                    //           color: Colors.blue, fontWeight: FontWeight.bold),
+                    //     )),
                     SizedBox(
                       height: 15,
                     ),
                     Text(
-                      "Select Catagory",
+                      "Select Category",
                       style: GoogleFonts.prompt(
                           fontSize: 18, color: Colors.blueGrey.shade900),
                     ),
@@ -151,7 +162,12 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                     SizedBox(
                       height: 10,
                     ),
+
+
                     Admin_CatagoryimageButton(),
+
+
+
                     SizedBox(
                       height: 30,
                     ),

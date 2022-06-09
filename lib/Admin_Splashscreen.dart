@@ -12,7 +12,8 @@ import 'Admin_HomPage.dart';
 //import 'package:flutter_icons/flutter_icons.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
-class AdminSplash_screen extends StatefulWidget {
+class
+AdminSplash_screen extends StatefulWidget {
   _AdminSplash_screenState createState() => _AdminSplash_screenState();
 }
 
@@ -49,7 +50,7 @@ class _AdminSplash_screenState extends State<AdminSplash_screen> {
                 height: 10,
               ),
               Text(
-                "Nileshwaram.com",
+                "Nileswaram.com",
                 style: GoogleFonts.aclonica(
                   color: Colors.red.shade900,
                   fontSize: 11.0,

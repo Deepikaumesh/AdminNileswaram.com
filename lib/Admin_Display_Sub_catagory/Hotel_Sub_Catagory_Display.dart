@@ -1,15 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../Sub_Catagory_Registrations/Textile_Sub_Sections/Family_store_Registration.dart';
-import 'FamilystoreDisplay.dart';
 import 'GentsDisplay.dart';
 import 'KidsDisplay.dart';
 import 'LadiesDisplay.dart';
 import 'NonVegHotelDisplay.dart';
 import 'UndergarmentsDisplay.dart';
-import 'VegHotelDisplay.dart';
+import '../Admin_Display Catagory/HotelDisplay.dart';
 
 class Hotel_Sub_Display extends StatefulWidget {
   const Hotel_Sub_Display({Key? key}) : super(key: key);
@@ -48,7 +45,7 @@ class _Hotel_Sub_DisplayState extends State<Hotel_Sub_Display> {
                       borderSide: BorderSide(color: Colors.black12)
                   ),
                   child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Veghotel_data()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_data()));
                   }, child:Text("Veg Hotels",style: GoogleFonts.prompt(fontSize: 21,),)))),
 
               Card(

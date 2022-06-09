@@ -25,7 +25,7 @@ class _Admin_Search_BarState extends State<Admin_Search_Bar> {
         child: TextField(
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Admin_Searchbar_Home()));
+                context, MaterialPageRoute(builder: (context) => Cust_Searchbar_Home()));
           },
           textAlign: TextAlign.start,
           textAlignVertical: TextAlignVertical.center,

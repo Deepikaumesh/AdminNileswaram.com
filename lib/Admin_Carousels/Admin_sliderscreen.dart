@@ -18,8 +18,6 @@ class _AdminAd_SliderscreenState extends State<AdminAd_Sliderscreen> {
   //late List imageList;
   bool loading = true;
   String imagefolder =
-      //"https://jcizone19.in/._A_nileswaram/directoryapp/images/";
-     // "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/";
    "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/adimages/";
 
   fetchAllImage() async {

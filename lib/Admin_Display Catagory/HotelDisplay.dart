@@ -1,8 +1,22 @@
 import 'dart:convert';
 
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:open_mail_app/open_mail_app.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:maps_launcher/maps_launcher.dart';
+
+import 'NonVegHotelDetail.dart';
+
+
+
+
+
+
+
 
 //Creating a class user to store the data;
 class User {
@@ -17,6 +31,9 @@ class User {
   final String insta;
   final String facebook;
   final String blood;
+  final String other_pro;
+  final String image;
+
 
   User({
     // required this.id,
@@ -30,43 +47,55 @@ class User {
     required this.insta,
     required this.facebook,
     required this.blood,
+    required this.other_pro,
+    required this.image,
   });
 }
 
-class Display_Hotel_Data extends StatefulWidget {
+class Display_Restaurant_data extends StatefulWidget {
   @override
-  _Display_Hotel_DataState createState() => _Display_Hotel_DataState();
+  _Display_Restaurant_dataState createState() => _Display_Restaurant_dataState();
 }
 
-class _Display_Hotel_DataState extends State<Display_Hotel_Data> {
+class _Display_Restaurant_dataState extends State<Display_Restaurant_data> {
+
+
 //Applying get request.
 
   Future<List<User>> getRequest() async {
     //replace your restFull API here.
-    String url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Display/hotel/hoteldisplay.php";
-       // "https://astrasoftware.in/directoryapp/Nileswaram.com/Catagory_Display/hotel/hoteldisplay.php";
-    // old  table textile
-    // "https://astrasoftware.in/directoryapp/Nileswaram.com/Catagory_Display/Textile/textile_display.php";
+    String url = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Restaurant_Display.php";
+    //"https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Display/hotel/reastaurant.php";
+
 
     final response = await http.get(Uri.parse(url));
 
     var responseData = json.decode(response.body);
+    var hello = responseData; //(facebook);
+    //  print(hello(phoneNumber));
+    // print(hello(phoneNumber));
+    // // var k =hello(phoneNumber);
+    // // print(k);
+
 
     //Creating a list to store input data;
     List<User> users = [];
     for (var singleUser in responseData) {
       User user = User(
         //id:  singleUser["id"].toString(),
-          name: singleUser["name"].toString(),
-          address: singleUser["address"].toString(),
-          phone: singleUser["phone"].toString(),
-          mobile: singleUser["mobile"].toString(),
-          blood: singleUser["blood"].toString(),
-          insta: singleUser["insta"].toString(),
-          website: singleUser["website"].toString(),
-          facebook: singleUser["facebook"].toString(),
-          email: singleUser["email"].toString(),
-          watsap: singleUser["watsap"].toString());
+        name: singleUser["name"].toString(),
+        address: singleUser["address"].toString(),
+        phone: singleUser["phone"].toString(),
+        mobile: singleUser["mobile"].toString(),
+        blood: singleUser["blood"].toString(),
+        insta: singleUser["insta"].toString(),
+        website: singleUser["website"].toString(),
+        facebook: singleUser["facebook"].toString(),
+        email: singleUser["email"].toString(),
+        watsap: singleUser["watsap"].toString(),
+        other_pro: singleUser["other_pro"].toString(),
+        image: singleUser["image"].toString(),
+      );
 
       //Adding user to the list.
       users.add(user);
@@ -82,7 +111,7 @@ class _Display_Hotel_DataState extends State<Display_Hotel_Data> {
           centerTitle: true,
           backgroundColor: Colors.pink.shade800,
           title: Text(
-            "Hotel Catagory",
+            "Restaurant",
             style: GoogleFonts.prompt(fontSize: 22),
           ),
           leading: IconButton(
@@ -101,13 +130,17 @@ class _Display_Hotel_DataState extends State<Display_Hotel_Data> {
                 return Container(
                   child: Center(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CircularProgressIndicator(),
+                        CircularProgressIndicator(
+                          color: Colors.red.shade900,
+                          strokeWidth: 5,
+                        ),
                         SizedBox(
                           height: 30,
                         ),
                         Text(
-                          "Loading Please Wait",
+                          "Data Loading Please Wait!",
                           style: TextStyle(),
                         ),
                       ],
@@ -116,135 +149,41 @@ class _Display_Hotel_DataState extends State<Display_Hotel_Data> {
                 );
               } else {
                 return ListView.builder(
-                    itemCount: snapshot.data.length,
-                    itemBuilder: (ctx, index) => SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.all(10),
-                            padding: EdgeInsets.all(30),
-                            decoration: BoxDecoration(
-                              color: Colors.blueGrey.shade100,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            height:
-                            MediaQuery.of(context).size.height / 2.5,
-                            width: MediaQuery.of(context).size.width / 1,
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text("Name:"),
-                                      Text(snapshot.data[index].name),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("Address:"),
-                                      Text(snapshot.data[index].address),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("Phone No:"),
-                                      Text(snapshot.data[index].phone),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("Mobile No:"),
-                                      Text(snapshot.data[index].mobile),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "Watsap No:",
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                      Text(
-                                        snapshot.data[index].watsap,
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "Email Id:",
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                      Text(
-                                        snapshot.data[index].email,
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("Website Address:",
-                                          style: GoogleFonts.prompt(
-                                              fontSize: 15,
-                                              color: Colors.red.shade900)),
-                                      Text(
-                                        snapshot.data[index].website,
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "Instagram Id:",
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                      Text(
-                                        snapshot.data[index].insta,
-                                        style: GoogleFonts.prompt(
-                                            fontSize: 15,
-                                            color: Colors.red.shade900),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("Facebook Id:"),
-                                      Text(snapshot.data[index].facebook),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("Blood Group:"),
-                                      Text(snapshot.data[index].blood),
-                                    ],
-                                  ),
-                                ],
+                  itemCount: snapshot.data.length,
+                  itemBuilder: (ctx, index) =>
+                      Card(
+                        margin: EdgeInsets.all(10),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: ListTile(
+                            contentPadding: EdgeInsets.all(10.0),
+                            leading: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Colors.red.shade900),
+                                image: DecorationImage(
+                                  image: NetworkImage(snapshot.data[index].image),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                            title: Text(
+                              snapshot.data[index].name,
+                              style: GoogleFonts.lora(
+                                  fontSize: 20, color: Colors.pink.shade700),
+                            ),
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return NonVegHotelDetail(snapshot.data[index]);
+                                  }
+                                  )
+                              );
+                            }
+                        ),
                       ),
-                    )
-                  //     ListTile(
-                  //   title: Text(snapshot.data[index].name),
-                  //   subtitle: Text(snapshot.data[index].address),
-                  //   trailing: Text(snapshot.data[index].phone),
-                  //
-                  //   contentPadding: EdgeInsets.only(bottom: 20.0),
-                  // ),
                 );
               }
             },
@@ -254,4 +193,3 @@ class _Display_Hotel_DataState extends State<Display_Hotel_Data> {
     );
   }
 }
-//

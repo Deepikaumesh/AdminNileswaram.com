@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'About_Us.dart';
-import 'AddNewSubcatagory.dart';
-import 'Add_catagory.dart';
-import 'Admin_About_Us.dart';
-import 'Admin_version.dart';
+import 'Main_Registration/Main_Registration.dart';
 import 'Registrations/Admin_Advertisement_Reg.dart';
 import 'Registrations/Admin_News_Registration.dart';
 import 'Registrations/Admin_event_Registration.dart';
-import 'Registrations/Shop_Registration.dart';
+
 
 
 
@@ -41,7 +38,7 @@ class AdminDrawer extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(20),
                   child: Text(
-                    "Nileshwaram.com",
+                    "Nileswaram.com",
                     style: GoogleFonts.aclonica(
                       color: Colors.red.shade900,
                       fontSize: 20.0,
@@ -76,27 +73,27 @@ class AdminDrawer extends StatelessWidget {
                 fontSize: 15,
               )),
         ),
-        ListTile(
-          onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => AdminVersion()));
-          },
-          leading: Icon(
-            Icons.mobile_friendly_outlined,
-            color: Colors.blueGrey.shade900,
-          ),
-          title: Text(
-            "Version",
-            style: GoogleFonts.prompt(fontSize: 15),
-          ),
-        ),
+        // ListTile(
+        //   onTap: () {
+        //     Navigator.push(
+        //         context, MaterialPageRoute(builder: (context) => AdminVersion()));
+        //   },
+        //   leading: Icon(
+        //     Icons.mobile_friendly_outlined,
+        //     color: Colors.blueGrey.shade900,
+        //   ),
+        //   title: Text(
+        //     "Version",
+        //     style: GoogleFonts.prompt(fontSize: 15),
+        //   ),
+        // ),
 
         ListTile(
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => Business_Reg_Catagory()));
+                    builder: (context) => Main_Registration_Page()));
           },
           leading: Icon(
             Icons.business,
@@ -141,31 +138,6 @@ class AdminDrawer extends StatelessWidget {
             color: Colors.blueGrey.shade900,
           ),
           title: Text("Advertisement Registration",
-              style: GoogleFonts.prompt(fontSize: 15)),
-        ),
-
-        ListTile(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => NewAdd_Catagory()));
-          },
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blueGrey.shade900,
-          ),
-          title: Text("Add New Category",
-              style: GoogleFonts.prompt(fontSize: 15)),
-        ),
-        ListTile(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => NewSubCatagory()));
-          },
-          leading: Icon(
-            Icons.menu,
-            color: Colors.blueGrey.shade900,
-          ),
-          title: Text("Add New sub Category",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 

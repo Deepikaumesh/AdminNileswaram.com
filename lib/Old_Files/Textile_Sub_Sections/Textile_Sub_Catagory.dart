@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'Textile_Sub_Sections/Family_store_Registration.dart';
-import 'Textile_Sub_Sections/Gents_Section.dart';
-import 'Textile_Sub_Sections/Kids_Section.dart';
-import 'Textile_Sub_Sections/Ladies_Section.dart';
-import 'Textile_Sub_Sections/UnderGarments_Section.dart';
+import '../Textile_Registration.dart';
+import 'Gents_Section.dart';
+import 'Kids_Section.dart';
+import 'Ladies_Section.dart';
+import 'UnderGarments_Section.dart';
 
 class Textile_Sub extends StatefulWidget {
   const Textile_Sub({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class _Textile_SubState extends State<Textile_Sub> {
               ),
               GestureDetector(
                 onTap: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Family_Store_RegPage()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_RegPage()));
                 },
                 child: Card(
                     margin: EdgeInsets.all(30),
@@ -48,7 +48,7 @@ class _Textile_SubState extends State<Textile_Sub> {
                         borderSide: BorderSide(color: Colors.black12)
                     ),
                     child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Family_Store_RegPage()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_RegPage()));
                     }, child:Text("Family Store",style: GoogleFonts.prompt(fontSize: 21,),)))),
               ),
 

@@ -1,334 +1,224 @@
+import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
 
-import 'About_Us.dart';
-import 'Admin_Display Catagory/BarberShop_Display.dart';
-import 'Admin_Display Catagory/Beautyparler_Display.dart';
-import 'Admin_Display Catagory/FruitsandVeg_Display.dart';
-import 'Admin_Display Catagory/Hardware_Display.dart';
-import 'Admin_Display Catagory/HomeAppliance_Display.dart';
-import 'Admin_Display Catagory/Hospital_Display.dart';
-import 'Admin_Display Catagory/MedicalShop_Display.dart';
-import 'Admin_Display_Sub_catagory/Furniture_Sub_Catagory_Display.dart';
-import 'Admin_HomPage.dart';
-import 'Display/Newcatagory_display.dart';
-import 'Display_new_sub_catagory.dart';
-
-
-
+import 'Admin_Display Catagory/NonVegHotelDetail.dart';
 
 
 class View_More extends StatefulWidget {
+  const View_More({Key? key}) : super(key: key);
+
   @override
-  View_MoreState createState() => new View_MoreState();
+  _View_MoreState createState() => _View_MoreState();
 }
 
-class View_MoreState extends State<View_More> {
+class _View_MoreState extends State<View_More> {
+
+
+  List<Note> _notes = [];
+  List<Note> _notesForDisplay =[];
+  Future <List<Note>> fetchNotes() async{
+    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Display_ASC_order.php";
+    var response = await http.get(Uri.parse(url));
+
+
+    List <Note> notes = [];
+
+
+    if (response.statusCode ==200) {
+      var notesjson =json.decode(response.body);
+      for(var notejson in notesjson){
+        notes.add(Note.fromJson(notejson));
+      }
+    }return notes;
+  }
+
+
+  @override
+  void initState(){
+    fetchNotes().then((value) {
+      setState(() {
+        _notes.addAll(value);
+        _notesForDisplay = _notes;
+      });
+
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-
     return Scaffold(
-      appBar: AppBar(title: Text("View More Catagory",style: GoogleFonts.prompt(color: Colors.red.shade900),),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        leading: GestureDetector(
-          onTap: () { Navigator.pop(context);},
-          child: Icon(
-            Icons.arrow_back_rounded,color: Colors.red.shade900, size: 35, // add custom icons also
-          ),
-        ), ),
-
-
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.grey.shade700,
-        backgroundColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Admin_HomePage()));
-                },
-                child: Icon(
-                  Icons.home_outlined,
-                  size: 30,
-                )),
-            label: 'Home',
-          ),
-
-
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => View_More()));
-                },
-                child: Icon(
-                  Icons.menu_open_rounded,
-                  size: 30,
-                )),
-            label: 'Catagory',
-          ),
-
-
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => About_Us()));
-                },
-                child: Icon(
-                  Icons.menu,
-                  size: 30,
-                )),
-            label: 'About',
-          ),
-        ],
-       // currentIndex: _selectedIndex,
-
-      ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      body: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10)
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 40),
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Furniture_Sub_Display()));
-
-                        },
-                        child: new Image.asset(
-                          'assets/furniture.png',
-                          height: 80.0,
-                          width: 80.0,
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Furniture_Sub_Display()));
-                      }, child: Text("Furniture",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
-
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Hardware_Display()));
-
-                        },
-                        child: new Image.asset(
-                          'assets/wrench.png',
-                          height: 80.0,
-                          width: 80.0,
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Hardware_Display()));
-                      }, child: Text("Hardware",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
-                    ],
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>BeautyParler_Display()));
-                        },
-                        child: new Image.asset(
-                          'assets/makeup.png',
-                          height: 80.0,
-                          width: 80.0,
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BeautyParler_Display()));
-                      }, child: Text("Beautyparler",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
-
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Barbershop_display()));
-                        },
-                        child: new Image.asset(
-                          'assets/barber.png',
-                          height: 80.0,
-                          width: 80.0,
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Barbershop_display()));
-                      }, child: Text("Barber Shop",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
-                    ],
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-
-                      Padding(
-                        padding:EdgeInsets.only(right: 22),
-                        child: GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeAppliance_Display()));
-                          },
-                          child: new Image.asset(
-                            'assets/home-appliance.png',
-                            height: 80.0,
-                            width: 80.0,
-                          ),
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeAppliance_Display()));
-                      }, child: Text("Home Appliance",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold,fontSize: 13),))
-
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(right: 12),
-                        child: GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicalShop_Display()));
-
-                          },
-                          child: new Image.asset(
-                            'assets/pharmacy.png',
-                            height: 80.0,
-                            width: 80.0,
-                          ),
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicalShop_Display()));
-                      }, child: Text("Medical Shop",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold,fontSize: 13),))
-                      // new Text(
-                      //   "shop",
-                      //   style:
-                      //       TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
-                      // )
-                    ],
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-
-                      Padding(
-                        padding: EdgeInsets.only(right: 22),
-                        child: GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Fruits_Veg_Display()));
-                          },
-                          child: new Image.asset(
-                            'assets/market.png',
-                            height: 80.0,
-                            width: 80.0,
-                          ),
-                        ),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Fruits_Veg_Display()));
-                      }, child: Text("Fruts&Vegitables",
-                        style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,
-                            fontWeight: FontWeight.bold,fontSize: 13),)),
-
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(padding: EdgeInsets.only(right: 12),
-
-                      child: GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>hospital_Display()));
-                        },
-                        child: Image.asset(
-                          'assets/hospital.png',
-                          height: 80.0,
-                          width: 80.0,
-                        ),
-                      ),),
-                      TextButton(onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>hospital_Display()));
-                      }, child: Text("Hospital",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold,fontSize: 13),)),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 10,),
-            TextButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>New_Cat()));
-
-              },
-              child: Text('View More'),
-
+        appBar: AppBar(title: Text("View More Category",style: GoogleFonts.prompt(color: Colors.red.shade900),),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          centerTitle: true,
+          leading: GestureDetector(
+            onTap: () { Navigator.pop(context);},
+            child: Icon(
+              Icons.arrow_back_rounded,color: Colors.red.shade900, size: 30,
             ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>New_Sub_Cat()));
+          ), ),
+        body: ListView.builder(
+          itemBuilder: (context, index) {
+            return index == 0 ? _searchBar() :_listitem(index-1);
 
-                },
-                child: Text('View More Sub Catagory'),
+          },
+          itemCount: _notesForDisplay.length+1,
+        )
+    );
+  }
 
-              )
-            ],
+  _searchBar(){
+    return Padding(padding: EdgeInsets.all(30.0),
+      child: TextField(
+        textAlign: TextAlign.start,
+        textAlignVertical: TextAlignVertical.center,
+        decoration: new InputDecoration(
+          border: new OutlineInputBorder(
+              borderSide: new BorderSide(color: Colors.teal),
+            borderRadius: BorderRadius.circular(40),
+
           ),
+          hintText: 'Search Catagory....',
         ),
+        // decoration: InputDecoration(
+        //     prefixIcon:Icon(Icons.search),
+        //     hintText: 'Search Catagory....',
+        //   border: InputBorder.none,
+        // ),
+        onChanged: (text) {
+          text= text.toLowerCase();
+          setState(() {
+            _notesForDisplay = _notes.where((note) {
+              var noteCatagory =note.catagory.toLowerCase();
+              return noteCatagory.contains(text);
+            }).toList();
+          });
+        },
       ),
     );
   }
+
+
+  _listitem(index){
+
+    return   Card(
+      elevation: 5,
+      color: Colors.grey.shade200,
+      margin: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: ListTile(
+          contentPadding: EdgeInsets.all(10.0),
+          leading: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.red.shade900),
+              image: DecorationImage(
+                image: NetworkImage(_notesForDisplay[index].image),
+              ),
+            ),
+          ),
+          title: Text(
+            _notesForDisplay[index].catagory,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.lora(
+                fontSize: 20, color: Colors.pink.shade700),
+          ),
+          subtitle: Text(_notesForDisplay[index].name,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.lora(
+                fontSize: 15, color: Colors.pink.shade700),
+          ),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                  return NonVegHotelDetail(_notesForDisplay[index]);
+                }
+                )
+            );
+          }
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+List<Note> userModelFromJson(String str) => List<Note>.from(json.decode(str).map((x) => Note.fromJson(x)));
+
+String userModelToJson(List<Note> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+class Note {
+  Note({
+    required this.name,
+    required this.image,
+    required this.catagory,
+    required this.address,
+    required this.blood,
+    required this.phone,
+    required this.email,
+    required this.mobile,
+    required this.watsap,
+    required this.website,
+    required this.facebook,
+    required this.insta,
+    required this.other_pro,
+  });
+
+
+  String name;
+  String image;
+  String catagory;
+  String address;
+  String blood;
+  String phone;
+  String email;
+  String mobile;
+  String watsap;
+  String website;
+  String facebook;
+  String insta;
+  String other_pro;
+
+  factory Note.fromJson(Map<String, dynamic> json) => Note(
+    name: json["name"],
+    image: json["image"],
+    catagory: json["catagory"],
+    address: json["address"],
+    blood: json["blood"],
+    phone: json["phone"],
+    email: json["email"],
+    mobile: json["mobile"],
+    watsap: json["watsap"],
+    website: json["website"],
+    facebook: json["facebook"],
+    insta: json["insta"],
+    other_pro: json["other_pro"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "name": name,
+    "image":image,
+    "catagory":catagory,
+    "address": address,
+    "blood": blood,
+    "phone": phone,
+    "email": email,
+    "mobile": mobile,
+    "watsap": watsap,
+    "website": website,
+    "facebook": facebook,
+    "insta": insta,
+    "other_pro":other_pro,
+  };
 }

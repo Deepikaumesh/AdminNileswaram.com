@@ -4,8 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/view_more.dart';
 
 import 'Admin_Display Catagory/Grocery_display.dart';
+import 'Admin_Display Catagory/Textlie_display.dart';
 import 'Admin_Display_Sub_catagory/Hotel_Sub_Catagory_Display.dart';
 import 'Admin_Display_Sub_catagory/Textile_Sub_Catagory_Display.dart';
+import 'Admin_Display Catagory/HotelDisplay.dart';
 
 
 class Admin_CatagoryimageButton extends StatefulWidget {
@@ -21,7 +23,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
     return Container(
       decoration: BoxDecoration(
         //  color: Color(0xfffad4d4),
-        color: Colors.blueGrey.shade100,
+          color: Colors.teal.shade100,
           borderRadius: BorderRadius.circular(10)
       ),
       padding: EdgeInsets.only(top: 10, left: 10, right: 10),
@@ -38,7 +40,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
 
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Textile_Sub_Display()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Display_Textile_Data()));
                     },
                     child: new Image.asset(
                       'assets/cloth.png',
@@ -47,7 +49,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                     ),
                   ),
                   TextButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Textile_Sub_Display()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Display_Textile_Data()));
   }, child: Text("Textile",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
 
   ],
@@ -57,7 +59,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub_Display()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_data()));
 
                     },
                     child: new Image.asset(
@@ -67,8 +69,9 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                     ),
                   ),
                   TextButton(onPressed: () {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub_Display()));
-                  }, child: Text("Hotel",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_data()));
+                   // Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub_Display()));
+                  }, child: Text("Restaurant",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
                   // new Text(
                   //   "shop",
                   //   style:

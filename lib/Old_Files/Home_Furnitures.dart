@@ -7,12 +7,12 @@ import 'package:http/http.dart' as http;
 
 //import 'getdata.dart';
 
-class Home_Furnitures_Catagory extends StatefulWidget {
+class Furniture_Reg_Page extends StatefulWidget {
   @override
-  _Home_Furnitures_CatagoryState createState() => _Home_Furnitures_CatagoryState();
+  _Furniture_Reg_PageState createState() => _Furniture_Reg_PageState();
 }
 
-class _Home_Furnitures_CatagoryState extends State<Home_Furnitures_Catagory> {
+class _Furniture_Reg_PageState extends State<Furniture_Reg_Page> {
   TextEditingController name = new TextEditingController();
   TextEditingController address = new TextEditingController();
   TextEditingController blood = new TextEditingController();

@@ -17,6 +17,7 @@ class Admin_UserDetails {
   Admin_UserDetails({
     required this.id,
     required this.name,
+    required this.catagory,
     required this.address,
     required this.blood,
     required this.phone,
@@ -26,10 +27,12 @@ class Admin_UserDetails {
     required this.website,
     required this.facebook,
     required this.insta,
+    required this.image,
   });
 
   String id;
   String name;
+  String catagory;
   String address;
   String blood;
   String phone;
@@ -39,10 +42,12 @@ class Admin_UserDetails {
   String website;
   String facebook;
   String insta;
+  String image;
 
   factory Admin_UserDetails.fromJson(Map<dynamic, dynamic> json) => Admin_UserDetails(
     id: json["id"],
     name: json["name"],
+    catagory:json["catagory"],
     address: json["address"],
     blood: json["blood"],
     phone: json["phone"],
@@ -52,11 +57,14 @@ class Admin_UserDetails {
     website: json["website"],
     facebook: json["facebook"],
     insta: json["insta"],
+    image: json["image"],
+
   );
 
   Map<dynamic,dynamic> toJson() => {
     "id": id,
     "name": name,
+    "catagory":catagory,
     "address": address,
     "blood": blood,
     "phone": phone,
@@ -66,6 +74,7 @@ class Admin_UserDetails {
     "website": website,
     "facebook": facebook,
     "insta": insta,
+    "image":image,
   };
 }
 

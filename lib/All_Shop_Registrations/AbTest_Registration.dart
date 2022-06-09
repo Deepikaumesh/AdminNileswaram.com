@@ -16,12 +16,30 @@ class Ab_Test_Reg extends StatefulWidget {
 
 class _Ab_Test_RegState extends State<Ab_Test_Reg> {
   TextEditingController namecontroller = TextEditingController();
-  TextEditingController descriptioncontroller = TextEditingController();
+  TextEditingController addresscontroller = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
+  TextEditingController mobilecontroller = TextEditingController();
+  TextEditingController watsapcontroller = TextEditingController();
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController websitecontroller = TextEditingController();
+  TextEditingController facebookcontroller = TextEditingController();
+  TextEditingController instalcontroller = TextEditingController();
+  TextEditingController bloodcontroller = TextEditingController();
+  TextEditingController other_procontroller = TextEditingController();
 
   @override
   void initState() {
     namecontroller = TextEditingController();
-    descriptioncontroller = TextEditingController();
+    addresscontroller = TextEditingController();
+    phonecontroller = TextEditingController();
+    mobilecontroller = TextEditingController();
+    watsapcontroller = TextEditingController();
+    emailcontroller== TextEditingController();
+    websitecontroller= TextEditingController();
+    facebookcontroller= TextEditingController();
+    instalcontroller= TextEditingController();
+    bloodcontroller= TextEditingController();
+    other_procontroller= TextEditingController();
     super.initState();
   }
 
@@ -36,7 +54,21 @@ class _Ab_Test_RegState extends State<Ab_Test_Reg> {
     var request = http.MultipartRequest('POST', Uri.parse(url));
     request.files.add(await http.MultipartFile.fromPath('image', filepath));
     request.fields['name'] = namecontroller.text;
-    request.fields['description'] = descriptioncontroller.text;
+    request.fields['address'] = addresscontroller.text;
+    request.fields['phone'] = phonecontroller.text;
+    request.fields['mobile'] = mobilecontroller.text;
+    request.fields['watsap'] = watsapcontroller.text;
+    request.fields['email'] = emailcontroller.text;
+    request.fields['website'] = websitecontroller.text;
+    request.fields['facebook'] = facebookcontroller.text;
+    request.fields['insta'] = instalcontroller.text;
+    request.fields['blood'] =bloodcontroller.text;
+    request.fields['other_pro'] = other_procontroller.text;
+
+
+
+
+
     var res = await request.send();
     return res.reasonPhrase;
   }
@@ -77,6 +109,21 @@ class _Ab_Test_RegState extends State<Ab_Test_Reg> {
               onPressed: () async {
                 var res = await uploadImage(_imageFile.path, uploadUrl);
                 print(res);
+                namecontroller.clear();
+                addresscontroller.clear();
+                phonecontroller.clear();
+                mobilecontroller.clear();
+                watsapcontroller.clear();
+                emailcontroller.clear();
+                websitecontroller.clear();
+                facebookcontroller.clear();
+                instalcontroller.clear();
+                bloodcontroller.clear();
+                other_procontroller.clear();
+
+
+
+
                 final snackBar = await SnackBar(
                   content: const Text('Image Uploaded Successfully!'),
                   action: SnackBarAction(
@@ -106,7 +153,7 @@ class _Ab_Test_RegState extends State<Ab_Test_Reg> {
     } else {
       return Center(
         child: const Text(
-          'Pick an Image of Event',
+          'Pick an Image ',
           //textAlign: TextAlign.center,
         ),
       );
@@ -159,7 +206,7 @@ class _Ab_Test_RegState extends State<Ab_Test_Reg> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Event title',
+                    labelText: 'Enter Name',
                   ),
                   keyboardType: TextInputType.text,
                 ),
@@ -172,17 +219,167 @@ class _Ab_Test_RegState extends State<Ab_Test_Reg> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                 child: TextField(
-                  controller: descriptioncontroller,
+                  controller: addresscontroller,
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Event Description',
+                    labelText: 'Enter Address',
                   ),
                   keyboardType: TextInputType.multiline,
-                  maxLines: 10,
+                  maxLines: 3,
                 ),
               ),
             ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: phonecontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Phone No',
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: mobilecontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Mobile no',
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: watsapcontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Watsap no',
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: emailcontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter email_id',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: websitecontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Wesite addrss',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: facebookcontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter facebook Link',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: instalcontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Instagram link',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: bloodcontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter blood group',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: other_procontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter other products',
+                  ),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 5,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+
+
 
             FutureBuilder<void>(
               future: retriveLostData(),

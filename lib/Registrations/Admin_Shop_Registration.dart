@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../Sub_Catagory_Registrations/Furniture_Sub_Catagory.dart';
-import '../../Sub_Catagory_Registrations/Hotel_Sub_Catagory.dart';
-import '../../Sub_Catagory_Registrations/Textile_Sub_Catagory.dart';
-import '../Registration_Sub_catagory/Beautyparler_Registration.dart';
-import '../Registration_Sub_catagory/Grocery_Registration.dart';
-import '../Registration_Sub_catagory/Hardware_Registration.dart';
-import '../Registration_Sub_catagory/Home_Appliance_Registration.dart';
-import '../Registration_Sub_catagory/MedicalShop_Registration.dart';
-import '../Registration_Sub_catagory/barbershop_Registration.dart';
-import '../Registration_Sub_catagory/fruits&veg_Registration.dart';
-import '../Registration_Sub_catagory/hospital_Registration.dart';
+import '../Old_Files/Furniture_Sub_Catagory.dart';
+import '../All_Shop_Registrations/Beautyparler_Registration.dart';
+import '../All_Shop_Registrations/Grocery_Registration.dart';
+import '../All_Shop_Registrations/Hardware_Registration.dart';
+import '../All_Shop_Registrations/Home_Appliance_Registration.dart';
+import '../All_Shop_Registrations/MedicalShop_Registration.dart';
+import '../All_Shop_Registrations/barbershop_Registration.dart';
+import '../All_Shop_Registrations/fruits&veg_Registration.dart';
+import '../All_Shop_Registrations/hospital_Registration.dart';
 
 class Admin_Business_Reg_Catagory extends StatefulWidget {
   const Admin_Business_Reg_Catagory({Key? key}) : super(key: key);
@@ -52,7 +50,7 @@ class _Admin_Business_Reg_CatagoryState extends State<Admin_Business_Reg_Catagor
               borderSide: BorderSide(color: Colors.black12)
           ),
                     child: Center(child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_Sub()));
+                      //Navigator.push(context,MaterialPageRoute(builder: (context)=>Textile_Sub()));
                     }, child:Text("Textile",style: GoogleFonts.prompt(fontSize: 21,),)))),
 
                 Card(
@@ -63,7 +61,7 @@ class _Admin_Business_Reg_CatagoryState extends State<Admin_Business_Reg_Catagor
                         borderSide: BorderSide(color: Colors.black12)
                     ),
                     child: Center(child:TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub()));
+                     // Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub()));
                     }, child:Text("Hotel",style: GoogleFonts.prompt(fontSize: 21,),))),),
 
                 Card(

@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-
-import '../Sub_Catagory_Registrations/Textile_Sub_Sections/Family_store_Registration.dart';
-import 'FamilystoreDisplay.dart';
 import 'GentsDisplay.dart';
 import 'KidsDisplay.dart';
 import 'LadiesDisplay.dart';
@@ -47,46 +43,46 @@ class _Textile_Sub_DisplayState extends State<Textile_Sub_Display> {
                       borderSide: BorderSide(color: Colors.black12)
                   ),
                   child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Familystore_data()));
+                   // Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Textile_data()));
                   }, child:Text("Family Store",style: GoogleFonts.prompt(fontSize: 21,),)))),
-
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Gents_data()));
-                  }, child:Text("Gents",style: GoogleFonts.prompt(fontSize: 21,),)))),
-
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Ladies_data()));
-                  }, child:Text("Ladies",style: GoogleFonts.prompt(fontSize: 21,),)))),
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Kids_data()));
-                  }, child:Text("Kids",style: GoogleFonts.prompt(fontSize: 21,),)))),
-              Card(
-                  margin: EdgeInsets.all(30),
-                  shape:  OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.black12)
-                  ),
-                  child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_undergarments_data()));
-                  }, child:Text("Under Garments",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              //
+              // Card(
+              //     margin: EdgeInsets.all(30),
+              //     shape:  OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(10),
+              //         borderSide: BorderSide(color: Colors.black12)
+              //     ),
+              //     child: Center(child: TextButton(onPressed: (){
+              //       Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Gents_data()));
+              //     }, child:Text("Gents",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              //
+              // Card(
+              //     margin: EdgeInsets.all(30),
+              //     shape:  OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(10),
+              //         borderSide: BorderSide(color: Colors.black12)
+              //     ),
+              //     child: Center(child: TextButton(onPressed: (){
+              //       Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Ladies_data()));
+              //     }, child:Text("Ladies",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              // Card(
+              //     margin: EdgeInsets.all(30),
+              //     shape:  OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(10),
+              //         borderSide: BorderSide(color: Colors.black12)
+              //     ),
+              //     child: Center(child: TextButton(onPressed: (){
+              //       Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Kids_data()));
+              //     }, child:Text("Kids",style: GoogleFonts.prompt(fontSize: 21,),)))),
+              // Card(
+              //     margin: EdgeInsets.all(30),
+              //     shape:  OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(10),
+              //         borderSide: BorderSide(color: Colors.black12)
+              //     ),
+              //     child: Center(child: TextButton(onPressed: (){
+              //       Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_undergarments_data()));
+              //     }, child:Text("Under Garments",style: GoogleFonts.prompt(fontSize: 21,),)))),
 
 
 

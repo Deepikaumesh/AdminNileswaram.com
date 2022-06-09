@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'Funiture_Sub_Sections/Home_Furnitures.dart';
+import 'Home_Furnitures.dart';
 
-import 'Funiture_Sub_Sections/Office_furnitures.dart';
+
 
 class Furniture_Sub extends StatefulWidget {
   const Furniture_Sub({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _Furniture_SubState extends State<Furniture_Sub> {
                       borderSide: BorderSide(color: Colors.black12)
                   ),
                   child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Home_Furnitures_Catagory()));
+                   // Navigator.push(context,MaterialPageRoute(builder: (context)=>Furniture_Reg_Page()));
                   }, child:Text("Home Furnitures",style: GoogleFonts.prompt(fontSize: 21,),)))),
 
               Card(
@@ -53,7 +53,7 @@ class _Furniture_SubState extends State<Furniture_Sub> {
                       borderSide: BorderSide(color: Colors.black12)
                   ),
                   child: Center(child: TextButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Office_Furnitures_Catagory()));
+                   // Navigator.push(context,MaterialPageRoute(builder: (context)=>Furniture_Reg_Page()));
                   }, child:Text("Office Furnitures",style: GoogleFonts.prompt(fontSize: 21,),)))),
 
 
