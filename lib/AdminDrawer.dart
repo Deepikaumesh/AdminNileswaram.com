@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'About_Us.dart';
+import 'Local_Body/Local_Body_Reg.dart';
 import 'Main_Registration/Main_Registration.dart';
 import 'Registrations/Admin_Advertisement_Reg.dart';
 import 'Registrations/Admin_News_Registration.dart';
 import 'Registrations/Admin_event_Registration.dart';
+import 'Registrations/Public_Organistation_Registration.dart';
+import 'Registrations/Public_Organistation_Registration2.dart';
 
 
 
@@ -140,6 +143,61 @@ class AdminDrawer extends StatelessWidget {
           title: Text("Advertisement Registration",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
+
+
+
+        ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Public_Organisation_Reg()));
+          },
+          leading: Icon(
+            Icons.business_outlined,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Public Organistaion Registration",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+
+
+
+
+
+
+
+        ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Public_Organisation_Reg2()));
+          },
+          leading: Icon(
+            Icons.photo,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Tourist Place Registration",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+
+
+
+
+
+        ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Local_Body_Registrations()));
+          },
+          leading: Icon(
+            Icons.business_outlined,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Local Body Registration",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+
+
+
+
 
 
 

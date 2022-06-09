@@ -9,6 +9,7 @@ import 'Admin_Carousels/Admin_sliderscreen.dart';
 import 'Admin_News_container.dart';
 import 'Display/Admin_EventDisplay.dart';
 import 'Display/Adminnews_Display.dart';
+import 'Display/Public_Tourist_Local_Display_Container.dart';
 
 
 
@@ -137,19 +138,6 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
 
                     News_Display(),
 
-
-                    // TextButton(
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //           context,
-                    //           MaterialPageRoute(
-                    //               builder: (context) => News_Display()));
-                    //     },
-                    //     child: Text(
-                    //       "View More News>>",
-                    //       style: GoogleFonts.quicksand(
-                    //           color: Colors.blue, fontWeight: FontWeight.bold),
-                    //     )),
                     SizedBox(
                       height: 15,
                     ),
@@ -169,13 +157,22 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
 
 
                     SizedBox(
-                      height: 30,
+                      height: 40,
                     ),
-                    // Text(
-                    //   "Ads",
-                    //   style: GoogleFonts.prompt(
-                    //       fontSize: 18, color: Colors.blueGrey.shade700),
-                    // ),
+                    Text(
+                      "Other Category",
+                      style: GoogleFonts.prompt(
+                          fontSize: 18, color: Colors.blueGrey.shade900),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+
+
+                    Public_Tourist_Local_Display_Container(),
+
+
+
                     Text(
                       "Events",
                       style: GoogleFonts.prompt(

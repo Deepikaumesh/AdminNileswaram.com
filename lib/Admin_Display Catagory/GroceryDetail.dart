@@ -357,7 +357,7 @@ class GroceryDetail extends StatelessWidget {
                         border: Border.all(width: 1,color: Colors.red.shade100),
                         color: Colors.grey,
                         image: DecorationImage(
-                          image: AssetImage('assets/location.jpeg'),
+                          image: AssetImage('assets/loca.jpeg'),
                           fit: BoxFit.cover,
                         ),
                         borderRadius: BorderRadius.circular(10)),

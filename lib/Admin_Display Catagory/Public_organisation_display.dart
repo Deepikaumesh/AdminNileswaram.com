@@ -6,10 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
 import 'GroceryDetail.dart';
+import 'Public_Organisation_Detail.dart';
 
 
 
-final _url = 'https://www.astrasoftwaresolutions.com';
+
 
 //Creating a class user to store the data;
 class User {
@@ -18,13 +19,7 @@ class User {
   final String address;
   final String phone;
   final String mobile;
-  final String watsap;
-  final String email;
   final String website;
-  final String insta;
-  final String facebook;
-  final String blood;
-  final String other_pro;
   final String image;
 
   User({
@@ -33,33 +28,27 @@ class User {
     required this.address,
     required this.phone,
     required this.mobile,
-    required this.watsap,
-    required this.email,
     required this.website,
-    required this.insta,
-    required this.facebook,
-    required this.blood,
-    required this.other_pro,
     required this.image,
   });
 }
 
 
 
-class Grocery_Display extends StatefulWidget {
+class Public_Organisation_Display extends StatefulWidget {
   @override
-  _Grocery_DisplayState createState() => _Grocery_DisplayState();
+  _Public_Organisation_DisplayState createState() => _Public_Organisation_DisplayState();
 }
 
-class _Grocery_DisplayState extends State<Grocery_Display> {
+class _Public_Organisation_DisplayState extends State<Public_Organisation_Display> {
 
 
 //Applying get request.
 
   Future<List<User>> getRequest() async {
     //replace your restFull API here.
-    String url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Grocery_Display.php";
-    //  "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Display/Grocery/grocery.php";
+    String url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Public_tourist_Display.php";
+
 
 
     final response = await http.get(Uri.parse(url));
@@ -75,13 +64,7 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
         address: singleUser["address"].toString(),
         phone: singleUser["phone"].toString(),
         mobile: singleUser["mobile"].toString(),
-        blood: singleUser["blood"].toString(),
-        insta: singleUser["insta"].toString(),
         website: singleUser["website"].toString(),
-        facebook: singleUser["facebook"].toString(),
-        email: singleUser["email"].toString(),
-        watsap: singleUser["watsap"].toString(),
-        other_pro: singleUser["other_pro"].toString(),
         image: singleUser["image"].toString(),
       );
 
@@ -99,7 +82,7 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
           centerTitle: true,
           backgroundColor: Colors.pink.shade800,
           title: Text(
-            "Grocery Shops",
+            "Public Organisations",
             style: GoogleFonts.prompt(fontSize: 22),
           ),
           leading: IconButton(
@@ -165,7 +148,7 @@ class _Grocery_DisplayState extends State<Grocery_Display> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                    return GroceryDetail(snapshot.data[index]);
+                                    return Public_organisation_Detail(snapshot.data[index]);
                                   }));
                             }),
                       ),
