@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'District_display.dart';
+import 'Grama_display.dart';
+import 'block_display.dart';
+import 'municipality_display.dart';
+
 
 
 
@@ -48,10 +53,10 @@ class Local_Body_Display extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold)),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) =>  Grama_Registration_Page()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  Grama_Panchayath_Display()),
+                  );
                 },
                 child: Text("Grama Panchayath",
                   style: GoogleFonts.inter(fontSize: 15),),
@@ -74,10 +79,10 @@ class Local_Body_Display extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold)),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) =>  Block_Panchayath_Registration_Page()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  block_Display()),
+                  );
                 },
                 child: Text("Block Panchayath",
                   style: GoogleFonts.inter(fontSize: 15),),
@@ -98,10 +103,10 @@ class Local_Body_Display extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold)),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) =>  District_Panchayath_Registration_Page()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  District_Panchayath_Display()),
+                   );
                 },
                 child: Text("District Panchayath",
                   style: GoogleFonts.inter(fontSize: 15),),
@@ -124,10 +129,10 @@ class Local_Body_Display extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold)),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) =>  Municipality_Registration_Page()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  municipality_Display()),
+                  );
                 },
                 child: Text("Municipality",
                   style: GoogleFonts.inter(fontSize: 15),),
