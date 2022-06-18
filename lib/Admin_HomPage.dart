@@ -9,7 +9,7 @@ import 'Admin_Carousels/Admin_sliderscreen.dart';
 import 'Admin_News_container.dart';
 import 'Display/Admin_EventDisplay.dart';
 import 'Display/Adminnews_Display.dart';
-import 'Display/Public_Tourist_Local_Display_Container.dart';
+import 'Display_Other_Catagory/Public_Tourist_Local_Display_Container.dart';
 
 
 
@@ -41,7 +41,7 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Nileswaram.com",
+          "Nileshwaram.com",
           style: GoogleFonts.aclonica(
             color: Colors.red.shade900,
             fontSize: 22.0,
@@ -169,7 +169,8 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                     ),
 
 
-                    Public_Tourist_Local_Display_Container(),
+                  //  Public_Tourist_Local_Display_Container(),
+                    Public_Tourist_Local_Display_Container2(),
 
 
 

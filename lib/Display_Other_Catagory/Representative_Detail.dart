@@ -5,10 +5,10 @@ import 'package:maps_launcher/maps_launcher.dart';
 import 'package:open_mail_app/open_mail_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Public_organisation_Detail extends StatelessWidget {
+class Representative_Detail extends StatelessWidget {
   final passing_data;
 
-  const Public_organisation_Detail(this.passing_data, {Key? key}) : super(key: key);
+  const Representative_Detail(this.passing_data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,12 +70,10 @@ class Public_organisation_Detail extends StatelessWidget {
                             padding: EdgeInsets.only(
                                 right: 30, left: 30, top: 10),
                             child: Text(
-                              passing_data.website,
+                              passing_data.catagory,
                               style: GoogleFonts.poppins(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             )),
-
-
 
 
 
@@ -118,26 +116,7 @@ class Public_organisation_Detail extends StatelessWidget {
                           SizedBox(
                             height: 5,
                           ),
-                          Container(
-                            height: 20,
-                            width: 130,
-                            decoration: BoxDecoration(
-                                color: Colors.pink.shade50,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                                child: GestureDetector(
-                                  onTap: () async =>
-                                  !await launch('sms:' + passing_data.phone),
-                                  child: Text(
-                                    passing_data.phone,
-                                    style: GoogleFonts.inter(
-                                        fontSize: 12,
-                                        decoration: TextDecoration.underline,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.pink.shade300),
-                                  ),
-                                )),
-                          ),
+
                         ],
                       ),
                       SizedBox(
@@ -185,16 +164,7 @@ class Public_organisation_Detail extends StatelessWidget {
                             .size
                             .width / 20,
                       ),
-                      Container(
-                          height: 35,
-                          width: 35,
-                          child: Icon(
-                            Icons.email,
-                            size: 20,
-                          ),
-                          decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              borderRadius: BorderRadius.circular(10))),
+
                       SizedBox(
                         width: 20,
                       ),
@@ -232,48 +202,6 @@ class Public_organisation_Detail extends StatelessWidget {
                   ),
 
 
-                  SizedBox(height: 30,),
-                  Container(
-                    // child: Image.asset('assets/location.jpeg'),
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height / 6,
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width / 1.2,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 1, color: Colors.red.shade100),
-                        color: Colors.grey,
-                        image: DecorationImage(
-                          image: AssetImage('assets/loca.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30)),
-                          primary: Colors.red.shade900,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 90, vertical: 18),
-                          textStyle: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold)),
-                      onPressed: () =>
-                          MapsLauncher.launchQuery(
-                              passing_data.name + passing_data.address),
-
-                      child: Text("View Direction",
-                        style: GoogleFonts.inter(fontSize: 15),),
-
-                    ),
-                  ),
 
                   SizedBox(height: 5,),
 

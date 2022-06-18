@@ -5,10 +5,10 @@ import 'package:maps_launcher/maps_launcher.dart';
 import 'package:open_mail_app/open_mail_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Tourist_Detail extends StatelessWidget {
+class Public_organisation_Detail extends StatelessWidget {
   final passing_data;
 
-  const Tourist_Detail(this.passing_data, {Key? key}) : super(key: key);
+  const Public_organisation_Detail(this.passing_data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +65,16 @@ class Tourist_Detail extends StatelessWidget {
                               style: GoogleFonts.poppins(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             )),
+                        Padding(
+                          // padding: EdgeInsets.only(top: 20, right: 150),
+                            padding: EdgeInsets.only(
+                                right: 30, left: 30, top: 10),
+                            child: Text(
+                              passing_data.website,
+                              style: GoogleFonts.poppins(
+                                fontSize: 15,),
+                            )),
+
 
 
                       ],

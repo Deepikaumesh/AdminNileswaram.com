@@ -5,15 +5,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 
 
-class Public_Organisation_Reg extends StatefulWidget {
+class Tourist_Reg extends StatefulWidget {
 
   @override
-  _Public_Organisation_RegState createState() =>
-      _Public_Organisation_RegState();
+  _Tourist_RegState createState() =>
+      _Tourist_RegState();
 }
 
-class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
-  TextEditingController catagorycontroller = TextEditingController();
+class _Tourist_RegState extends State<Tourist_Reg> {
+
   TextEditingController namecontroller = TextEditingController();
   TextEditingController addresscontroller = TextEditingController();
   TextEditingController phonecontroller = TextEditingController();
@@ -22,7 +22,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
 
   @override
   void initState() {
-    catagorycontroller=TextEditingController();
+
     namecontroller = TextEditingController();
     addresscontroller = TextEditingController();
     phonecontroller = TextEditingController();
@@ -33,7 +33,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
 
   var _imageFile;
   final String uploadUrl =
-      'https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Organisation_Reg.php';
+      'https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Public_tourist_Registration.php';
 
 
   final ImagePicker _picker = ImagePicker();
@@ -41,7 +41,6 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
   Future<String?> uploadImage(filepath, url) async {
     var request = http.MultipartRequest('POST', Uri.parse(url));
     request.files.add(await http.MultipartFile.fromPath('image', filepath));
-    request.fields['catagory'] = catagorycontroller.text;
     request.fields['name'] = namecontroller.text;
     request.fields['address'] = addresscontroller.text;
     request.fields['phone'] = phonecontroller.text;
@@ -92,7 +91,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
               onPressed: () async {
                 var res = await uploadImage(_imageFile.path, uploadUrl);
               //  print(res);
-                catagorycontroller.clear();
+
                 namecontroller.clear();
                 addresscontroller.clear();
                 phonecontroller.clear();
@@ -186,20 +185,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                child: TextField(
-                  controller: catagorycontroller,
-                  decoration: new InputDecoration(
-                    border: new OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Catagory',
-                  ),
-                  keyboardType: TextInputType.text,
-                ),
-              ),
-            ),
+
 
             SizedBox(height: 20,),
             Container(
@@ -307,22 +293,11 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
                 }
               },
             ),
-            // IconButton(onPressed: (){
-            //   _pickImage();
-            // }, icon: Icon(Icons.photo_library)),
 
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.red.shade900,
-      //   onPressed: _pickImage,
-      //   tooltip: 'Pick Image from gallery',
-      //   child: Icon(
-      //     Icons.photo_library,
-      //     color: Colors.white,
-      //   ),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
+
     );
   }
 }

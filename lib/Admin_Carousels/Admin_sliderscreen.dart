@@ -61,13 +61,16 @@ class _AdminAd_SliderscreenState extends State<AdminAd_Sliderscreen> {
                 dotSize: 5.0,
                 dotIncreasedColor: Color(0xFFFF335C),
                 dotBgColor: Colors.transparent,
-                dotPosition: DotPosition.topCenter,
+                dotPosition: DotPosition.bottomCenter,
                 dotVerticalPadding: 10.0,
                 showIndicator: true,
-                indicatorBgPadding: 7.0,
+                indicatorBgPadding: 5.0,
                 autoplayDuration:Duration(seconds: 3),
                 images: imageList.map((element) {
-                  return Image.network(imagefolder + element['image'],height: 170,);
+                  return Image.network(imagefolder + element['image'],
+                   //height: 170,
+
+                  );
                 }).toList(),
               ),
 

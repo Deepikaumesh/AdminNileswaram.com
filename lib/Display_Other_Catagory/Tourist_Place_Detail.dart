@@ -5,10 +5,10 @@ import 'package:maps_launcher/maps_launcher.dart';
 import 'package:open_mail_app/open_mail_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Public_organisation_Detail extends StatelessWidget {
+class Tourist_Display_Detail extends StatelessWidget {
   final passing_data;
 
-  const Public_organisation_Detail(this.passing_data, {Key? key}) : super(key: key);
+  const Tourist_Display_Detail(this.passing_data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +72,8 @@ class Public_organisation_Detail extends StatelessWidget {
                             child: Text(
                               passing_data.website,
                               style: GoogleFonts.poppins(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
+                                fontSize: 15,),
                             )),
-
-
 
 
 
@@ -276,6 +274,7 @@ class Public_organisation_Detail extends StatelessWidget {
                   ),
 
                   SizedBox(height: 5,),
+
 
                   // Image(
                   //   image: AssetImage('assets/facebook.png')),

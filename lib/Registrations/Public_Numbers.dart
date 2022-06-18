@@ -5,14 +5,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 
 
-class Public_Organisation_Reg2 extends StatefulWidget {
+class Public_Numbers_Registration extends StatefulWidget {
 
   @override
-  _Public_Organisation_Reg2State createState() =>
-      _Public_Organisation_Reg2State();
+  _Public_Numbers_RegistrationState createState() =>
+      _Public_Numbers_RegistrationState();
 }
 
-class _Public_Organisation_Reg2State extends State<Public_Organisation_Reg2> {
+class _Public_Numbers_RegistrationState extends State<Public_Numbers_Registration> {
   TextEditingController catagorycontroller = TextEditingController();
   TextEditingController namecontroller = TextEditingController();
   TextEditingController addresscontroller = TextEditingController();
@@ -33,7 +33,7 @@ class _Public_Organisation_Reg2State extends State<Public_Organisation_Reg2> {
 
   var _imageFile;
   final String uploadUrl =
-      'https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Public_tourist_Registration2.php';
+      'https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Public_Numbers_Registration2.php';
 
 
   final ImagePicker _picker = ImagePicker();
@@ -278,20 +278,13 @@ class _Public_Organisation_Reg2State extends State<Public_Organisation_Reg2> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Wesite addrss',
+                    labelText: 'Enter Website address',
                   ),
                   keyboardType: TextInputType.text,
                 ),
               ),
             ),
             SizedBox(height: 20,),
-
-
-
-
-
-
-
 
             FutureBuilder<void>(
               future: retriveLostData(),

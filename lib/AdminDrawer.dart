@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'About_Us.dart';
-import 'Local_Body/Local_Body_Reg.dart';
+import 'Delete/Delete.dart';
+import 'Delete/Delete_Event.dart';
 import 'Main_Registration/Main_Registration.dart';
 import 'Registrations/Admin_Advertisement_Reg.dart';
 import 'Registrations/Admin_News_Registration.dart';
 import 'Registrations/Admin_event_Registration.dart';
 import 'Registrations/Public_Organistation_Registration.dart';
-import 'Registrations/Public_Organistation_Registration2.dart';
+import 'Registrations/Public_Numbers.dart';
+import 'Registrations/Representative_Registration.dart';
+import 'Registrations/Tourist_Registration.dart';
 
 
 
@@ -27,21 +30,17 @@ class AdminDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius: 60.0,
+                  radius: 50.0,
                   backgroundImage: AssetImage(
                     "assets/nileswram.png",
                   ),
-                  // NetworkImage(
-                  //   "https://images.unsplash.com/photo-1594616838951-c155f8d978a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-                  // ),
+
                 ),
-                // SizedBox(
-                //   height: 20.0,
-                // ),
+
                 Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(15),
                   child: Text(
-                    "Nileswaram.com",
+                    "Nileshwaram.com",
                     style: GoogleFonts.aclonica(
                       color: Colors.red.shade900,
                       fontSize: 20.0,
@@ -59,8 +58,7 @@ class AdminDrawer extends StatelessWidget {
         SizedBox(
           height: 5.0,
         ),
-        //Now let's Add the button for the Menu
-        //and let's copy that and modify it
+
 
         ListTile(
           onTap: () {
@@ -76,20 +74,7 @@ class AdminDrawer extends StatelessWidget {
                 fontSize: 15,
               )),
         ),
-        // ListTile(
-        //   onTap: () {
-        //     Navigator.push(
-        //         context, MaterialPageRoute(builder: (context) => AdminVersion()));
-        //   },
-        //   leading: Icon(
-        //     Icons.mobile_friendly_outlined,
-        //     color: Colors.blueGrey.shade900,
-        //   ),
-        //   title: Text(
-        //     "Version",
-        //     style: GoogleFonts.prompt(fontSize: 15),
-        //   ),
-        // ),
+
 
         ListTile(
           onTap: () {
@@ -155,7 +140,7 @@ class AdminDrawer extends StatelessWidget {
             Icons.business_outlined,
             color: Colors.blueGrey.shade900,
           ),
-          title: Text("Public Organistaion Registration",
+          title: Text(" Organistaion Registration",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 
@@ -168,7 +153,7 @@ class AdminDrawer extends StatelessWidget {
         ListTile(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Public_Organisation_Reg2()));
+                MaterialPageRoute(builder: (context) => Tourist_Reg()));
           },
           leading: Icon(
             Icons.photo,
@@ -185,15 +170,48 @@ class AdminDrawer extends StatelessWidget {
         ListTile(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Local_Body_Registrations()));
+                MaterialPageRoute(builder: (context) => Public_Numbers_Registration()));
           },
           leading: Icon(
             Icons.business_outlined,
             color: Colors.blueGrey.shade900,
           ),
-          title: Text("Local Body Registration",
+          title: Text("Public Number Registration",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
+
+        ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Representative_Reg()));
+          },
+          leading: Icon(
+            Icons.business_outlined,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Representive Registration",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+
+        ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Delete()));
+          },
+          leading: Icon(
+            Icons.delete_forever_rounded,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Delete",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+
+
+
+
+
+
+
 
 
 

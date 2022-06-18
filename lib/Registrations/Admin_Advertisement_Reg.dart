@@ -15,11 +15,11 @@ class Admin_Advertisemen_Regt extends StatefulWidget {
 }
 
 class _Admin_Advertisemen_RegtState extends State<Admin_Advertisemen_Regt> {
- // TextEditingController namecontroller = TextEditingController();
+ TextEditingController namecontroller = TextEditingController();
 
   @override
   void initState() {
-  //  namecontroller = TextEditingController();
+   namecontroller = TextEditingController();
     super.initState();
   }
 
@@ -33,7 +33,7 @@ class _Admin_Advertisemen_RegtState extends State<Admin_Advertisemen_Regt> {
   Future<String?> uploadImage(filepath, url) async {
     var request = http.MultipartRequest('POST', Uri.parse(url));
     request.files.add(await http.MultipartFile.fromPath('image', filepath));
-   // request.fields['name'] = namecontroller.text;
+    request.fields['name'] = namecontroller.text;
     var res = await request.send();
     return res.reasonPhrase;
   }
@@ -73,6 +73,7 @@ class _Admin_Advertisemen_RegtState extends State<Admin_Advertisemen_Regt> {
               color: Colors.red.shade900,
               onPressed: () async {
                 var res = await uploadImage(_imageFile.path, uploadUrl);
+                namecontroller.clear();
                 print(res);
 
     final snackBar = SnackBar(
@@ -147,16 +148,20 @@ class _Admin_Advertisemen_RegtState extends State<Admin_Advertisemen_Regt> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // TextField(
-            //   controller: namecontroller,
-            //   decoration: new InputDecoration(
-            //     border: new OutlineInputBorder(
-            //         borderSide: new BorderSide(color: Colors.teal)),
-            //     labelText: 'Event title',
-            //   ),
-            //   keyboardType: TextInputType.text,
-            // ),
-
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: namecontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: '*Advertaisement Name',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
             FutureBuilder<void>(
               future: retriveLostData(),
               builder: (BuildContext context, AsyncSnapshot<void> snapshot) {

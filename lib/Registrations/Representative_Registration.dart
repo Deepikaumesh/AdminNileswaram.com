@@ -5,18 +5,17 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 
 
-class Public_Organisation_Reg extends StatefulWidget {
+class Representative_Reg extends StatefulWidget {
 
   @override
-  _Public_Organisation_RegState createState() =>
-      _Public_Organisation_RegState();
+  _Representative_RegState createState() =>
+      _Representative_RegState();
 }
 
-class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
+class _Representative_RegState extends State<Representative_Reg> {
   TextEditingController catagorycontroller = TextEditingController();
   TextEditingController namecontroller = TextEditingController();
   TextEditingController addresscontroller = TextEditingController();
-  TextEditingController phonecontroller = TextEditingController();
   TextEditingController mobilecontroller = TextEditingController();
   TextEditingController websitecontroller = TextEditingController();
 
@@ -25,7 +24,6 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
     catagorycontroller=TextEditingController();
     namecontroller = TextEditingController();
     addresscontroller = TextEditingController();
-    phonecontroller = TextEditingController();
     mobilecontroller = TextEditingController();
     websitecontroller= TextEditingController();
     super.initState();
@@ -33,7 +31,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
 
   var _imageFile;
   final String uploadUrl =
-      'https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Organisation_Reg.php';
+      'https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Representative_Reg.php';
 
 
   final ImagePicker _picker = ImagePicker();
@@ -44,7 +42,6 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
     request.fields['catagory'] = catagorycontroller.text;
     request.fields['name'] = namecontroller.text;
     request.fields['address'] = addresscontroller.text;
-    request.fields['phone'] = phonecontroller.text;
     request.fields['mobile'] = mobilecontroller.text;
     request.fields['website'] = websitecontroller.text;
 
@@ -95,7 +92,6 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
                 catagorycontroller.clear();
                 namecontroller.clear();
                 addresscontroller.clear();
-                phonecontroller.clear();
                 mobilecontroller.clear();
                 websitecontroller.clear();
 
@@ -194,7 +190,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Catagory',
+                    labelText: 'Enter Represetative Position',
                   ),
                   keyboardType: TextInputType.text,
                 ),
@@ -236,21 +232,6 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
             ),
             SizedBox(height: 20,),
 
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                child: TextField(
-                  controller: phonecontroller,
-                  decoration: new InputDecoration(
-                    border: new OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: '*Enter Phone No',
-                  ),
-                  keyboardType: TextInputType.number,
-                ),
-              ),
-            ),
-            SizedBox(height: 20,),
 
             Container(
               child: Padding(
@@ -270,21 +251,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
 
 
 
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                child: TextField(
-                  controller: websitecontroller,
-                  decoration: new InputDecoration(
-                    border: new OutlineInputBorder(
-                        borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Website address',
-                  ),
-                  keyboardType: TextInputType.text,
-                ),
-              ),
-            ),
-            SizedBox(height: 20,),
+
 
 
 

@@ -63,7 +63,7 @@ class _AdminEventDisplayState extends State<AdminEventDisplay> {
         dotSize: 5.0,
         dotIncreasedColor: Color(0xFFFF335C),
         dotBgColor: Colors.transparent,
-        dotPosition: DotPosition.topCenter,
+        dotPosition: DotPosition.bottomCenter,
         dotVerticalPadding: 10.0,
         showIndicator: true,
         indicatorBgPadding: 7.0,

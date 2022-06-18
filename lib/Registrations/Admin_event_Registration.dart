@@ -15,12 +15,12 @@ class Admin_Event_Regt extends StatefulWidget {
 }
 
 class _Admin_Event_RegtState extends State<Admin_Event_Regt> {
-   // TextEditingController namecontroller = TextEditingController();
+    TextEditingController namecontroller = TextEditingController();
    // TextEditingController descriptioncontroller = TextEditingController();
 
   @override
   void initState() {
-     // namecontroller = TextEditingController();
+      namecontroller = TextEditingController();
      // descriptioncontroller = TextEditingController();
     super.initState();
   }
@@ -35,7 +35,7 @@ class _Admin_Event_RegtState extends State<Admin_Event_Regt> {
   Future<String?> uploadImage(filepath, url) async {
     var request = http.MultipartRequest('POST', Uri.parse(url));
     request.files.add(await http.MultipartFile.fromPath('image', filepath));
-    // request.fields['name'] = namecontroller.text;
+     request.fields['name'] = namecontroller.text;
     // request.fields['description'] = descriptioncontroller.text;
     var res = await request.send();
     return res.reasonPhrase;
@@ -76,6 +76,7 @@ class _Admin_Event_RegtState extends State<Admin_Event_Regt> {
               color: Colors.red.shade900,
               onPressed: () async {
                  var res = await uploadImage(_imageFile.path, uploadUrl);
+                 namecontroller.clear();
                   print(res);
                 final snackBar = await SnackBar(
                   content: const Text('Image Uploaded Successfully!'),
@@ -151,20 +152,20 @@ class _Admin_Event_RegtState extends State<Admin_Event_Regt> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Container(
-            //   child: Padding(
-            //     padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-            //     child: TextField(
-            //       controller: namecontroller,
-            //       decoration: new InputDecoration(
-            //         border: new OutlineInputBorder(
-            //             borderSide: new BorderSide(color: Colors.teal)),
-            //         labelText: 'Event title',
-            //       ),
-            //       keyboardType: TextInputType.text,
-            //     ),
-            //   ),
-            // ),
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: namecontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: '*Event Name',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
             // SizedBox(height: 20,),
             //
             //

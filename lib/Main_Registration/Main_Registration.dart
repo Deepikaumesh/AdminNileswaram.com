@@ -109,6 +109,8 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
               color: Colors.red.shade900,
               onPressed: () async {
                 var res = await uploadImage(_imageFile.path, uploadUrl);
+               // Text("please wait");
+
               //  print(res);
                 catagorycontroller.clear();
                 namecontroller.clear();
@@ -331,7 +333,7 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Wesite addrss',
+                    labelText: 'Enter Website address',
                   ),
                   keyboardType: TextInputType.text,
                 ),
