@@ -218,7 +218,7 @@ class Note {
 // import 'package:http/http.dart' as http;
 //
 // import 'Public_Numbers2_Detail.dart';
-// import 'Public_Organisation_Detail.dart';
+// import 'Public_Organisation_detail.dart';
 //
 //
 //

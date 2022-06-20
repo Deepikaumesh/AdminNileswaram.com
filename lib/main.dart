@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Admin_HomPage.dart';
-import 'Admin_Splashscreen.dart';
+import 'Main_Files/Admin_HomPage.dart';
+import 'Main_Files/Admin_Splashscreen.dart';
 
 //@dart=2.9
 

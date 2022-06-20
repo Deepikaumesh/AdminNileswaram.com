@@ -197,7 +197,7 @@ class Note {
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:http/http.dart' as http;
 //
-// import 'Public_Organisation_Detail.dart';
+// import 'Public_Organisation_detail.dart';
 // import 'Tourist_Place_Detail.dart';
 //
 //

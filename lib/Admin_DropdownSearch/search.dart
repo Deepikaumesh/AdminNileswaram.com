@@ -23,7 +23,6 @@ class _Cust_Searchbar_HomeState extends State<Cust_Searchbar_Home> {
   List<Admin_UserDetails> _searchResult = [];
   List<Admin_UserDetails> _userDetails = [];
   final String url =
-  // "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/tableconnection.php";
       "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Display.php";
 
   Future<Null> getUserDetaails() async {
@@ -43,7 +42,8 @@ class _Cust_Searchbar_HomeState extends State<Cust_Searchbar_Home> {
       return;
     }
     _userDetails.forEach((userDetail) {
-      if (userDetail.name.contains(text) ||
+      if (
+          userDetail.name.contains(text) ||
           userDetail.catagory.contains(text) ||
           userDetail.address.contains(text) ||
           userDetail.blood.contains(text) ||
@@ -53,7 +53,8 @@ class _Cust_Searchbar_HomeState extends State<Cust_Searchbar_Home> {
           userDetail.watsap.contains(text) ||
           userDetail.website.contains(text) ||
           userDetail.facebook.contains(text) ||
-          userDetail.insta.contains(text)) _searchResult.add(userDetail);
+          userDetail.insta.contains(text))
+        _searchResult.add(userDetail);
     });
     setState(() {});
   }

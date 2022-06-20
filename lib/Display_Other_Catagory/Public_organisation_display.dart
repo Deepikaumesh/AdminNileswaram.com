@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
-import '../Admin_Display Catagory/Public_Organisation_Detail.dart';
+
+import '../Admin_Display Catagory/Public_Organisation_detail.dart';
 
 
 
@@ -226,7 +227,7 @@ class Note {
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:http/http.dart' as http;
 //
-// import 'Public_Organisation_Detail.dart';
+// import 'Public_Organisation_detail.dart';
 //
 //
 //

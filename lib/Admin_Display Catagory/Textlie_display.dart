@@ -9,7 +9,7 @@ import 'package:open_mail_app/open_mail_app.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 
-import 'FamilystoreDetail.dart';
+import 'Textile_detail.dart';
 
 //Creating a class user to store the data;
 class User {
@@ -164,7 +164,7 @@ class _Display_Textile_DataState extends State<Display_Textile_Data> {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return FamilyStore_Detail(snapshot.data[index]);
+                                return Textile_Detail(snapshot.data[index]);
                               }));
                         }
                         ),
