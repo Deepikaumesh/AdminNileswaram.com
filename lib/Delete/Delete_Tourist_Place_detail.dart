@@ -88,13 +88,13 @@ class _Tourist_Place_Delete_DetailState extends State<Tourist_Place_Delete_Detai
                     color: Colors.red.shade900,
                     onPressed: ()=>confirm(),
                   ),
-                  SizedBox(width: 10,),
-                  new RaisedButton(
-                    child: new Text("EDIT",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: (){},
-                    //=>confirm(),
-                  ),
+                  // SizedBox(width: 10,),
+                  // new RaisedButton(
+                  //   child: new Text("EDIT",style: TextStyle(color: Colors.white),),
+                  //   color: Colors.red.shade900,
+                  //   onPressed: (){},
+                  //   //=>confirm(),
+                  // ),
                 ],
               ),
 

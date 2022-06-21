@@ -27,7 +27,7 @@ class _Delete_AdvertaisementState extends State<Delete_Advertaisement> {
         centerTitle: true,
         backgroundColor: Colors.pink.shade800,
         title: Text(
-          "Advertaisement Images",
+          "Advertaisement",
 
         ),
         leading: IconButton(

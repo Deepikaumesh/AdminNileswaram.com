@@ -73,10 +73,11 @@ class ItemList extends StatelessWidget {
                 )
             ),
             child: new Card(
+              color: Colors.blueGrey.shade100,
 
               child: new ListTile(
                 //title: new Text(list[i]['id']),
-                leading: Text(list[i]['name']),
+                leading: Text(list[i]['name'],style: TextStyle(fontWeight: FontWeight.bold),),
             ),
           ),
           ),

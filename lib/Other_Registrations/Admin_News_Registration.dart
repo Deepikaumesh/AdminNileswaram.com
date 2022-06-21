@@ -11,25 +11,25 @@ class Admin_News_Reg extends StatefulWidget {
   @override
   _Admin_News_RegState createState() => _Admin_News_RegState();
 
-  void _showDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: new Text("Alert!!"),
-          content: new Text("You are awesome!"),
-          actions: <Widget>[
-            new FlatButton(
-              child: new Text("OK"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // void _showDialog(BuildContext context) {
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: new Text("Alert!!"),
+  //         content: new Text("You are awesome!"),
+  //         actions: <Widget>[
+  //           new FlatButton(
+  //             child: new Text("OK"),
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
 }
 
 class _Admin_News_RegState extends State<Admin_News_Reg> {

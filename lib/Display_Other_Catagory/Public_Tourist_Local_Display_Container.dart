@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Testings/Tourist_Display_with_searchbar.dart';
 import 'Public_Numbers_display.dart';
 import 'Public_organisation_display.dart';
 import 'Representative_display.dart';

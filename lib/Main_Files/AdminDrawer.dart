@@ -139,7 +139,7 @@ class AdminDrawer extends StatelessWidget {
             Icons.business_outlined,
             color: Colors.blueGrey.shade900,
           ),
-          title: Text(" Organistaion Registration",
+          title: Text(" Organisation Registration",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 
@@ -185,7 +185,7 @@ class AdminDrawer extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => Representative_Reg()));
           },
           leading: Icon(
-            Icons.business_outlined,
+            Icons.person,
             color: Colors.blueGrey.shade900,
           ),
           title: Text("Representive Registration",

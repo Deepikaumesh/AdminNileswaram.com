@@ -88,13 +88,13 @@ class _Representatve_DetailState extends State<Representatve_Detail> {
                     color: Colors.red.shade900,
                     onPressed: ()=>confirm(),
                   ),
-                  SizedBox(width: 10,),
-                  new RaisedButton(
-                    child: new Text("EDIT",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: (){},
-                    //=>confirm(),
-                  ),
+                  // SizedBox(width: 10,),
+                  // new RaisedButton(
+                  //   child: new Text("EDIT",style: TextStyle(color: Colors.white),),
+                  //   color: Colors.red.shade900,
+                  //   onPressed: (){},
+                  //   //=>confirm(),
+                  // ),
                 ],
               ),
 

@@ -25,7 +25,7 @@ class _Delete_EventState extends State<Delete_Event> {
         centerTitle: true,
         backgroundColor: Colors.pink.shade800,
         title: Text(
-          "Event Images",
+          "Events",
 
         ),
         leading: IconButton(

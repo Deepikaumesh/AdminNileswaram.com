@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
 import '../Main_Files/Admin_HomPage.dart';
+import '../Update/Update_Shop_business.dart';
 
 
 
@@ -28,7 +29,7 @@ class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detai
 
   void confirm (){
     AlertDialog alertDialog = new AlertDialog(
-      content: new Text("Are You sure want to delete '${widget.list[widget.index]['image']}'"),
+      content: new Text("Are You sure want to delete '${widget.list[widget.index]['name']}'"),
       actions: <Widget>[
         new RaisedButton(
           child: new Text("OK DELETE!",style: new TextStyle(color: Colors.black),),
@@ -83,24 +84,35 @@ class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detai
               new Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  new RaisedButton(
-                    child: new Text("DELETE",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: ()=>confirm(),
+                  ButtonTheme(
+                    minWidth: MediaQuery.of(context).size.width/3.5,
+                    height: MediaQuery.of(context).size.height/15,
+                    child: new RaisedButton(
+                      child: new Text("DELETE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                      color: Colors.red.shade900,
+                      onPressed: ()=>confirm(),
+                    ),
                   ),
-                  SizedBox(width: 10,),
-                  new RaisedButton(
-                    child: new Text("EDIT",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: (){},
-                    //=>confirm(),
-                  ),
+                  // SizedBox(width: 10,),
+                  // ButtonTheme(
+                  //   minWidth: MediaQuery.of(context).size.width/3.5,
+                  //   height: MediaQuery.of(context).size.height/15,
+                  //   child: RaisedButton(
+                  //     child: new Text("EDIT",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                  //     color: Colors.green,
+                  //     onPressed: ()=>Navigator.of(context).push(
+                  //         new MaterialPageRoute(
+                  //           builder: (BuildContext context)=>new Shop_Business_Update(list: widget.list, index: widget.index,),
+                  //         )
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
 
 
               new Padding(padding: const EdgeInsets.only(top: 30.0),),
-              new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 20.0),  textAlign: TextAlign.justify,),
+              new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 15.0),  textAlign: TextAlign.justify,),
 
 
 

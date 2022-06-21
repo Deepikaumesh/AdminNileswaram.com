@@ -88,13 +88,13 @@ class _Delete_Public_Number_DetailState extends State<Delete_Public_Number_Detai
                     color: Colors.red.shade900,
                     onPressed: ()=>confirm(),
                   ),
-                  SizedBox(width: 10,),
-                  new RaisedButton(
-                    child: new Text("EDIT",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: (){},
-                    //=>confirm(),
-                  ),
+                  // SizedBox(width: 10,),
+                  // new RaisedButton(
+                  //   child: new Text("EDIT",style: TextStyle(color: Colors.white),),
+                  //   color: Colors.red.shade900,
+                  //   onPressed: (){},
+                  //   //=>confirm(),
+                  // ),
                 ],
               ),
 

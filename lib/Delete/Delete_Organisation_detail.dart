@@ -88,19 +88,19 @@ class _Organisation_Delete_DetailState extends State<Organisation_Delete_Detail>
                     color: Colors.red.shade900,
                     onPressed: ()=>confirm(),
                   ),
-                  SizedBox(width: 10,),
-                  new RaisedButton(
-                    child: new Text("EDIT",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: (){},
-                    //=>confirm(),
-                  ),
+                  // SizedBox(width: 10,),
+                  // new RaisedButton(
+                  //   child: new Text("EDIT",style: TextStyle(color: Colors.white),),
+                  //   color: Colors.red.shade900,
+                  //   onPressed: (){},
+                  //   //=>confirm(),
+                  // ),
                 ],
               ),
 
 
               new Padding(padding: const EdgeInsets.only(top: 30.0),),
-              new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 20.0),  textAlign: TextAlign.justify,),
+              new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 15.0),  textAlign: TextAlign.justify,),
 
 
 

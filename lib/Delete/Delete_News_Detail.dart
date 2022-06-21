@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
 import '../Main_Files/Admin_HomPage.dart';
+import '../Update/Update_News.dart';
 
 
 
@@ -83,24 +84,36 @@ class _News_Delete_DetailState extends State<News_Delete_Detail> {
               new Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  new RaisedButton(
-                    child: new Text("DELETE",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: ()=>confirm(),
+                  ButtonTheme(
+                    minWidth: MediaQuery.of(context).size.width/3.5,
+                    height: MediaQuery.of(context).size.height/15,
+                    child: new RaisedButton(
+                      child: new Text("DELETE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                      color: Colors.red.shade900,
+                      onPressed: ()=>confirm(),
+                    ),
                   ),
                   SizedBox(width: 10,),
-                  new RaisedButton(
-                    child: new Text("EDIT",style: TextStyle(color: Colors.white),),
-                    color: Colors.red.shade900,
-                    onPressed: (){},
-                    //=>confirm(),
+                  ButtonTheme(
+                    minWidth: MediaQuery.of(context).size.width/3.5,
+                    height: MediaQuery.of(context).size.height/15,
+                    child: RaisedButton(
+                      child: new Text("EDIT",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                      color: Colors.green,
+                      onPressed: ()=>Navigator.of(context).push(
+                          new MaterialPageRoute(
+                            builder: (BuildContext context)=>new News_Update(list: widget.list, index: widget.index,),
+                          )
+                      ),
+                    ),
                   ),
+
         ],
         ),
 
 
               new Padding(padding: const EdgeInsets.only(top: 30.0),),
-                 new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 20.0),  textAlign: TextAlign.justify,),
+                 new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 15),  textAlign: TextAlign.justify,),
 
 
 
