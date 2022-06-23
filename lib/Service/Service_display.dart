@@ -5,23 +5,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
 import '../Admin_Display Catagory/View_More_Detail.dart';
+import 'Service_Detail.dart';
 
 
 
-class View_More extends StatefulWidget {
-  const View_More({Key? key}) : super(key: key);
+class Service_Display extends StatefulWidget {
+  const Service_Display({Key? key}) : super(key: key);
 
   @override
-  _View_MoreState createState() => _View_MoreState();
+  _Service_DisplayState createState() => _Service_DisplayState();
 }
 
-class _View_MoreState extends State<View_More> {
+class _Service_DisplayState extends State<Service_Display> {
 
 
   List<Note> _notes = [];
   List<Note> _notesForDisplay =[];
   Future <List<Note>> fetchNotes() async{
-    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Display_ASC_order.php";
+    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/service_display.php";
     var response = await http.get(Uri.parse(url));
 
 
@@ -52,14 +53,14 @@ class _View_MoreState extends State<View_More> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("View More Category",style: GoogleFonts.prompt(color: Colors.red.shade900),),
+        appBar: AppBar(title: Text("View Services",style: GoogleFonts.prompt(color: Colors.orange.shade800),),
           backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
           leading: GestureDetector(
             onTap: () { Navigator.pop(context);},
             child: Icon(
-              Icons.arrow_back_rounded,color: Colors.red.shade900, size: 30,
+              Icons.arrow_back_rounded,color: Colors.orange.shade800, size: 30,
             ),
           ), ),
         body: ListView.builder(
@@ -79,11 +80,11 @@ class _View_MoreState extends State<View_More> {
         textAlignVertical: TextAlignVertical.center,
         decoration: new InputDecoration(
           border: new OutlineInputBorder(
-              borderSide: new BorderSide(color: Colors.teal),
+            borderSide: new BorderSide(color: Colors.teal),
             borderRadius: BorderRadius.circular(40),
 
           ),
-          hintText: 'Search Catagory....',
+          hintText: 'Search Services....',
         ),
         // decoration: InputDecoration(
         //     prefixIcon:Icon(Icons.search),
@@ -120,7 +121,7 @@ class _View_MoreState extends State<View_More> {
             width: 50,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.red.shade900),
+              border: Border.all(color: Colors.orange.shade800),
               image: DecorationImage(
                 image: NetworkImage(_notesForDisplay[index].image),
               ),
@@ -130,17 +131,17 @@ class _View_MoreState extends State<View_More> {
             _notesForDisplay[index].catagory,
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.lora(
-                fontSize: 20, color: Colors.pink.shade700),
+                fontSize: 20, color: Colors.orange.shade800),
           ),
           subtitle: Text(_notesForDisplay[index].name,
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.lora(
-                fontSize: 15, color: Colors.pink.shade700),
+                fontSize: 15, color: Colors.orange.shade800),
           ),
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) {
-                  return Vie_More_Detail(_notesForDisplay[index]);
+                  return Service_Detail(_notesForDisplay[index]);
                 }
                 )
             );

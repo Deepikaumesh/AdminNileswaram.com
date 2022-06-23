@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../Service/Service_Registration.dart';
 import 'About_Us.dart';
 import '../Delete/Delete.dart';
 import '../Main_Registration/Main_Registration.dart';
@@ -89,6 +90,23 @@ class AdminDrawer extends StatelessWidget {
           title: Text("Business/Shop Registration",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
+
+        ListTile(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Service_Registration_Page()));
+          },
+          leading: Icon(
+            Icons.business,
+            color: Colors.blueGrey.shade900,
+          ),
+          title: Text("Service Registration",
+              style: GoogleFonts.prompt(fontSize: 15)),
+        ),
+
+
 
         ListTile(
           onTap: () {
@@ -201,7 +219,7 @@ class AdminDrawer extends StatelessWidget {
             Icons.delete_forever_rounded,
             color: Colors.blueGrey.shade900,
           ),
-          title: Text("Delete & Update",
+          title: Text("Delete",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 

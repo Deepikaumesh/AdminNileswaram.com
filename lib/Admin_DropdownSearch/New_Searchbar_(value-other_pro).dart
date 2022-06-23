@@ -8,20 +8,20 @@ import '../Admin_Display Catagory/View_More_Detail.dart';
 
 
 
-class View_More extends StatefulWidget {
-  const View_More({Key? key}) : super(key: key);
+class New_Searchbar extends StatefulWidget {
+  const New_Searchbar({Key? key}) : super(key: key);
 
   @override
-  _View_MoreState createState() => _View_MoreState();
+  _New_SearchbarState createState() => _New_SearchbarState();
 }
 
-class _View_MoreState extends State<View_More> {
+class _New_SearchbarState extends State<New_Searchbar> {
 
 
   List<Note> _notes = [];
   List<Note> _notesForDisplay =[];
   Future <List<Note>> fetchNotes() async{
-    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Display_ASC_order.php";
+    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Search_Box_Display.php";
     var response = await http.get(Uri.parse(url));
 
 
@@ -52,7 +52,7 @@ class _View_MoreState extends State<View_More> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("View More Category",style: GoogleFonts.prompt(color: Colors.red.shade900),),
+        appBar: AppBar(title: Text("Search Categories",style: GoogleFonts.prompt(color: Colors.red.shade900),),
           backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
@@ -73,17 +73,17 @@ class _View_MoreState extends State<View_More> {
   }
 
   _searchBar(){
-    return Padding(padding: EdgeInsets.all(30.0),
+    return Padding(padding: EdgeInsets.only(top: 5,left: 20,right: 20,bottom: 10),
       child: TextField(
         textAlign: TextAlign.start,
         textAlignVertical: TextAlignVertical.center,
         decoration: new InputDecoration(
           border: new OutlineInputBorder(
-              borderSide: new BorderSide(color: Colors.teal),
+            borderSide: new BorderSide(color: Colors.teal),
             borderRadius: BorderRadius.circular(40),
 
           ),
-          hintText: 'Search Catagory....',
+          hintText: 'Search....',
         ),
         // decoration: InputDecoration(
         //     prefixIcon:Icon(Icons.search),
@@ -94,8 +94,8 @@ class _View_MoreState extends State<View_More> {
           text= text.toLowerCase();
           setState(() {
             _notesForDisplay = _notes.where((note) {
-              var noteCatagory =note.catagory.toLowerCase();
-              return noteCatagory.contains(text);
+              var noteOther_pro =note.other_pro.toLowerCase();
+              return noteOther_pro.contains(text);
             }).toList();
           });
         },
@@ -114,7 +114,7 @@ class _View_MoreState extends State<View_More> {
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: ListTile(
-          contentPadding: EdgeInsets.all(10.0),
+          contentPadding: EdgeInsets.all(4.0),
           leading: Container(
             height: 50,
             width: 50,
@@ -127,15 +127,15 @@ class _View_MoreState extends State<View_More> {
             ),
           ),
           title: Text(
-            _notesForDisplay[index].catagory,
+            _notesForDisplay[index].name,
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.lora(
-                fontSize: 20, color: Colors.pink.shade700),
+                fontSize: 15, color: Colors.pink.shade700,fontWeight: FontWeight.bold),
           ),
-          subtitle: Text(_notesForDisplay[index].name,
+          subtitle: Text(_notesForDisplay[index].other_pro,
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.lora(
-                fontSize: 15, color: Colors.pink.shade700),
+                fontSize: 10, color: Colors.pink.shade700,fontWeight: FontWeight.bold),
           ),
           onTap: () {
             Navigator.push(context,

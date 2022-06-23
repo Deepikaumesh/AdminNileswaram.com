@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled2/Main_Files/view_more.dart';
+import '../Service/Service_Container.dart';
 import 'About_Us.dart';
 import 'AdminCatagory_image_buttons.dart';
 import 'AdminDrawer.dart';
 import '../Admin_DropdownSearch/Searchbar.dart';
 import '../Admin_Carousels/Admin_Advertaisement_carousel.dart';
 import '../Admin_Carousels/Admin_EventDisplay.dart';
-import '../Admin_Display Catagory/News_Display.dart';
 import '../Display_Other_Catagory/Public_Tourist_Local_Display_Container.dart';
+import '../New_News_Container/News_Container.dart';
 
 
 
@@ -120,7 +121,7 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                     AdminAd_Sliderscreen(),
 
 
-                    SizedBox(height: 10,),
+                    SizedBox(height: 20,),
 
 
 
@@ -131,11 +132,14 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                         color: Colors.blueGrey.shade900,
                       ),
                     ),
-                    // Carousel(),
 
-              //      News(),
+                    SizedBox(
+                      height: 10,
+                    ),
 
-                    News_Display(),
+                    News_Container(),
+
+                   // News_Display(),
 
                     SizedBox(
                       height: 15,
@@ -164,13 +168,23 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                           fontSize: 18, color: Colors.blueGrey.shade900),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
 
 
                   //  Public_Tourist_Local_Display_Container(),
                     Public_Tourist_Local_Display_Container2(),
+                    Text(
+                      "Services",
+                      style: GoogleFonts.prompt(
+                          fontSize: 18, color: Colors.blueGrey.shade900),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
 
+                    Service_Container(),
+                    SizedBox(height: 20,),
 
 
                     Text(
@@ -178,6 +192,8 @@ class _Admin_HomePageState extends State<Admin_HomePage> {
                       style: GoogleFonts.prompt(
                           fontSize: 18, color: Colors.blueGrey.shade900),
                     ),
+
+
                     AdminEventDisplay(),
 
 

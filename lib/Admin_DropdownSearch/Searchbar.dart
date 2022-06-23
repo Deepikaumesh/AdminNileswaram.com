@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled2/Admin_DropdownSearch/search.dart';
 
+import 'New_Searchbar_(value-other_pro).dart';
+
 
 
 
@@ -25,7 +27,8 @@ class _Admin_Search_BarState extends State<Admin_Search_Bar> {
         child: TextField(
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Cust_Searchbar_Home()));
+                // context, MaterialPageRoute(builder: (context) => Cust_Searchbar_Home()));
+                context, MaterialPageRoute(builder: (context) => New_Searchbar()));
           },
           textAlign: TextAlign.start,
           textAlignVertical: TextAlignVertical.center,

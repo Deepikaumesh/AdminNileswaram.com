@@ -10,6 +10,7 @@ import 'Delete_News.dart';
 import 'Delete_Organisation.dart';
 import 'Delete_Public_Numbers.dart';
 import 'Delete_Representatives.dart';
+import 'Delete_Services.dart';
 import 'Delete_Shop_Budsiness.dart';
 import 'Delete_Tourist_Place.dart';
 
@@ -121,6 +122,25 @@ class _DeleteState extends State<Delete> {
                     style: GoogleFonts.prompt(fontSize: 20)),
               ),
             ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Delete_Services()));
+                },
+                leading: Icon(
+                  Icons.delete_forever_rounded,
+                  color: Colors.blueGrey.shade900,
+                ),
+                title: Text("Delete Services",
+                    style: GoogleFonts.prompt(fontSize: 20)),
+              ),
+            ),
+
 
 
 

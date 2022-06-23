@@ -7,19 +7,19 @@ import '../Main_Files/Admin_HomPage.dart';
 
 
 
-class Shop_business_Delete_Detail extends StatefulWidget {
+class Service_Delete_Detail extends StatefulWidget {
   List list;
   int index;
-  Shop_business_Delete_Detail({required this.index,required this.list});
+  Service_Delete_Detail({required this.index,required this.list});
   @override
-  _Shop_business_Delete_DetailState createState() => new _Shop_business_Delete_DetailState();
+  _Service_Delete_DetailState createState() => new _Service_Delete_DetailState();
 }
 
-class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detail> {
+class _Service_Delete_DetailState extends State<Service_Delete_Detail> {
 
   void deleteData(){
     //var url="http://10.0.2.2/my_store/deleteData.php";
-    var url= "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Delete/Shop_Business_Delete.php";
+    var url= "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Delete/Delete_Services.php";
     http.post(Uri.parse(url),
         body: {
           'id': widget.list[widget.index]['id']

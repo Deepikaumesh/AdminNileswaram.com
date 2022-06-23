@@ -1,15 +1,10 @@
 import 'dart:convert';
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:open_mail_app/open_mail_app.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:maps_launcher/maps_launcher.dart';
-
 import 'Restaurant_Detail.dart';
+
 
 
 
@@ -53,6 +48,7 @@ class User {
 }
 
 class Display_Restaurant_data extends StatefulWidget {
+
   @override
   _Display_Restaurant_dataState createState() => _Display_Restaurant_dataState();
 }
@@ -60,12 +56,19 @@ class Display_Restaurant_data extends StatefulWidget {
 class _Display_Restaurant_dataState extends State<Display_Restaurant_data> {
 
 
+
+
+
+
+
+
+
 //Applying get request.
 
   Future<List<User>> getRequest() async {
     //replace your restFull API here.
     String url = "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Restaurant_Display.php";
-    //"https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Catagory_Display/hotel/reastaurant.php";
+
 
 
     final response = await http.get(Uri.parse(url));
@@ -181,7 +184,9 @@ class _Display_Restaurant_dataState extends State<Display_Restaurant_data> {
                                   }
                                   )
                               );
-                            }
+                            },
+
+
                         ),
                       ),
                 );

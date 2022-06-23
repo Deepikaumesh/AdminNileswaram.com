@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
+import 'Delete_service_detail.dart';
 import 'Delete_shop_business_detail.dart';
 import 'Delete_Event_Detail.dart';
 import 'Delete_News_Detail.dart';
 
 
-class Delete_Shop_business extends StatefulWidget {
+class Delete_Services extends StatefulWidget {
   @override
-  _Delete_Shop_businessState createState() => new _Delete_Shop_businessState();
+  _Delete_ServicesState createState() => new _Delete_ServicesState();
 }
 
-class _Delete_Shop_businessState extends State<Delete_Shop_business> {
+class _Delete_ServicesState extends State<Delete_Services> {
   Future<List> getData() async {
-    final response = await http.get(Uri.parse( "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Display_ASC_order.php"));
+    final response = await http.get(Uri.parse( "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/service_display.php"));
     return json.decode(response.body);
   }
 
@@ -27,7 +28,7 @@ class _Delete_Shop_businessState extends State<Delete_Shop_business> {
         centerTitle: true,
         backgroundColor: Colors.pink.shade800,
         title: Text(
-          "Delete Shop/Business",
+          "Delete Services",
 
         ),
         leading: IconButton(
@@ -70,7 +71,7 @@ class ItemList extends StatelessWidget {
           child: new GestureDetector(
             onTap: ()=>Navigator.of(context).push(
                 new MaterialPageRoute(
-                    builder: (BuildContext context)=> new Shop_business_Delete_Detail(list:list , index: i,)
+                    builder: (BuildContext context)=> new Service_Delete_Detail(list:list , index: i,)
                 )
             ),
             child: new Card(
