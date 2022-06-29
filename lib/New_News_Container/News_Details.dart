@@ -3,24 +3,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
 import '../Main_Files/Admin_HomPage.dart';
-import '../Update/Update_Business.dart';
+import '../Update/Update_News.dart';
 
 
 
 
-class Shop_business_Delete_Detail extends StatefulWidget {
+class News_Detail extends StatefulWidget {
   List list;
   int index;
-  Shop_business_Delete_Detail({required this.index,required this.list});
+  News_Detail({required this.index,required this.list});
   @override
-  _Shop_business_Delete_DetailState createState() => new _Shop_business_Delete_DetailState();
+  _News_DetailState createState() => new _News_DetailState();
 }
 
-class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detail> {
+class _News_DetailState extends State<News_Detail> {
 
   void deleteData(){
     //var url="http://10.0.2.2/my_store/deleteData.php";
-    var url= "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Delete/Shop_Business_Delete.php";
+    var url= "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Delete/News_Delete.php";
     http.post(Uri.parse(url),
         body: {
           'id': widget.list[widget.index]['id']
@@ -72,6 +72,23 @@ class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detai
             Navigator.pop(context);
           },
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.delete),
+            onPressed: () {
+              confirm();
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(
+                  builder: (BuildContext context)=>new News_Update(list: widget.list, index: widget.index,),
+                ), );
+            },
+          ),
+        ],
       ),
 
       body: new Container(
@@ -80,39 +97,11 @@ class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detai
         child: new Center(
           child: new Column(
             children: <Widget>[
-              SizedBox(height: 20,),
-              new Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  ButtonTheme(
-                    minWidth: MediaQuery.of(context).size.width/3.5,
-                    height: MediaQuery.of(context).size.height/15,
-                    child: new RaisedButton(
-                      child: new Text("DELETE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                      color: Colors.red.shade900,
-                      onPressed: ()=>confirm(),
-                    ),
-                  ),
-                  //  SizedBox(width: 10,),
-                  //  ButtonTheme(
-                  //  minWidth: MediaQuery.of(context).size.width/3.5,
-                  //   height: MediaQuery.of(context).size.height/15,
-                  //   child: RaisedButton(
-                  //     child: new Text("EDIT",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                  //     color: Colors.green,
-                  //     onPressed: ()=>Navigator.of(context).push(
-                  //         new MaterialPageRoute(
-                  //           builder: (BuildContext context)=>new Shop_Business_Update(list: widget.list, index: widget.index,),
-                  //         )
-                  //     ),
-                  //    ),
-                  // ),
-                ],
-              ),
-
-
-              new Padding(padding: const EdgeInsets.only(top: 30.0),),
-              new Text(widget.list[widget.index]['address'], style: new TextStyle(fontSize: 15.0),  textAlign: TextAlign.justify,),
+              //new Padding(padding: const EdgeInsets.only(top: 30.0),),
+              new Text(widget.list[widget.index]['address'],
+                textAlign: TextAlign.justify,
+                style: const TextStyle(fontSize: 20.0, color: Colors.black,),
+                overflow: TextOverflow.visible,),
 
 
 
@@ -126,3 +115,35 @@ class _Shop_business_Delete_DetailState extends State<Shop_business_Delete_Detai
     );
   }
 }
+
+
+
+
+
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+//
+//
+// class Detail_Screen_News extends StatelessWidget {
+//   final  pquestion;
+//   const Detail_Screen_News(this.pquestion, {Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         centerTitle: true,
+//         backgroundColor: Colors.pink.shade800,
+//         title: Text(pquestion.name),
+//       ),
+//       body: SingleChildScrollView(
+//           padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 30),
+//           child: Text(
+//             pquestion.address,
+//             textAlign: TextAlign.justify,
+//             style: const TextStyle(fontSize: 20.0, color: Colors.black,),
+//             overflow: TextOverflow.visible,
+//           )),
+//     );
+//   }
+// }

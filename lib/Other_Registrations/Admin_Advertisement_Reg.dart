@@ -103,7 +103,7 @@ class _Admin_Advertisemen_RegtState extends State<Admin_Advertisemen_Regt> {
     } else {
       return Center(
         child: const Text(
-          'You have not yet picked an image!.',
+          'Pick an Image of Advertaisement',
           //textAlign: TextAlign.center,
         ),
       );

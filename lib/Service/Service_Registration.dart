@@ -219,7 +219,7 @@ class _Service_Registration_PageState extends State<Service_Registration_Page> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Service Catagory',
+                    labelText: 'Enter Service Category',
                   ),
                   keyboardType: TextInputType.text,
                 ),

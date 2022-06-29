@@ -194,7 +194,7 @@ class _Public_Organisation_RegState extends State<Public_Organisation_Reg> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Catagory',
+                    labelText: 'Enter Category',
                   ),
                   keyboardType: TextInputType.text,
                 ),

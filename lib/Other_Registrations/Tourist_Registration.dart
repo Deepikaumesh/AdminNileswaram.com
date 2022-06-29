@@ -19,6 +19,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
   TextEditingController phonecontroller = TextEditingController();
   TextEditingController mobilecontroller = TextEditingController();
   TextEditingController websitecontroller = TextEditingController();
+  TextEditingController aboutcontroller = TextEditingController();
 
   @override
   void initState() {
@@ -28,6 +29,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
     phonecontroller = TextEditingController();
     mobilecontroller = TextEditingController();
     websitecontroller= TextEditingController();
+    aboutcontroller=TextEditingController();
     super.initState();
   }
 
@@ -46,6 +48,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
     request.fields['phone'] = phonecontroller.text;
     request.fields['mobile'] = mobilecontroller.text;
     request.fields['website'] = websitecontroller.text;
+    request.fields['about'] = aboutcontroller.text;
 
 
 
@@ -97,6 +100,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
                 phonecontroller.clear();
                 mobilecontroller.clear();
                 websitecontroller.clear();
+                aboutcontroller.clear();
 
 
 
@@ -265,6 +269,22 @@ class _Tourist_RegState extends State<Tourist_Reg> {
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
                     labelText: 'Enter Website address',
+                  ),
+                  keyboardType: TextInputType.text,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: aboutcontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'About',
                   ),
                   keyboardType: TextInputType.text,
                 ),

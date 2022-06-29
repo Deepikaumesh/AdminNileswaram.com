@@ -4,19 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-import 'Delete_Event_Detail.dart';
 
 
-class Delete_Event extends StatefulWidget {
+
+class View_more_display_with_delete extends StatefulWidget {
   @override
-  _Delete_EventState createState() => new _Delete_EventState();
+  _View_more_display_with_deleteState createState() => new _View_more_display_with_deleteState();
 }
 
-class _Delete_EventState extends State<Delete_Event> {
+class _View_more_display_with_deleteState extends State<View_more_display_with_delete> {
+
   Future<List> getData() async {
-    final response = await http.get(Uri.parse( "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/eventdisplay.php"));
+    final response = await http.get(Uri.parse( "https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Display_ASC_order.php"));
     return json.decode(response.body);
   }
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class _Delete_EventState extends State<Delete_Event> {
         centerTitle: true,
         backgroundColor: Colors.pink.shade800,
         title: Text(
-          "Events",
+          "Delete Shop/Business",
 
         ),
         leading: IconButton(
@@ -35,7 +41,7 @@ class _Delete_EventState extends State<Delete_Event> {
           },
         ),
       ),
-         body: new FutureBuilder<List>(
+      body: new FutureBuilder<List>(
         future: getData(),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
@@ -66,16 +72,17 @@ class ItemList extends StatelessWidget {
         return new Container(
           padding: const EdgeInsets.all(10.0),
           child: new GestureDetector(
-            onTap: ()=>Navigator.of(context).push(
-                new MaterialPageRoute(
-                    builder: (BuildContext context)=> new Event_Delete_Detail(list:list , index: i,)
-                )
-            ),
+            // onTap: ()=>Navigator.of(context).push(
+            //     new MaterialPageRoute(
+            //         builder: (BuildContext context)=> new Shop_business_Delete_Detail(list:list , index: i,)
+            //     )
+            // ),
             child: new Card(
 
               child: new ListTile(
-               // title: new Text(list[i]['id']),
-                leading: new Text(list[i]['name']),
+                //title: new Text(list[i]['id']),
+                title: Text(list[i]['name']),
+                subtitle: Text(list[i]['catagory']),
               ),
             ),
           ),

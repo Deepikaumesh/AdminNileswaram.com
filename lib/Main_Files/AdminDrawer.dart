@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../Delete/Delete_Advertaisement.dart';
+import '../Delete/Delete_Event.dart';
 import '../Service/Service_Registration.dart';
 import 'About_Us.dart';
 import '../Delete/Delete.dart';
@@ -210,6 +212,32 @@ class AdminDrawer extends StatelessWidget {
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
 
+        // ListTile(
+        //   onTap: () {
+        //     Navigator.push(context,
+        //         MaterialPageRoute(builder: (context) => Delete_Event()));
+        //   },
+        //   leading: Icon(
+        //     Icons.delete_forever,
+        //     color: Colors.blueGrey.shade900,
+        //   ),
+        //   title: Text("Delete Event",
+        //       style: GoogleFonts.prompt(fontSize: 15)),
+        // ),
+        //
+        // ListTile(
+        //   onTap: () {
+        //     Navigator.push(context,
+        //         MaterialPageRoute(builder: (context) => Delete_Advertaisement()));
+        //   },
+        //   leading: Icon(
+        //     Icons.delete_forever,
+        //     color: Colors.blueGrey.shade900,
+        //   ),
+        //   title: Text("Delete Advertaisement",
+        //       style: GoogleFonts.prompt(fontSize: 15)),
+        // ),
+
         ListTile(
           onTap: () {
             Navigator.push(context,
@@ -222,22 +250,6 @@ class AdminDrawer extends StatelessWidget {
           title: Text("Delete",
               style: GoogleFonts.prompt(fontSize: 15)),
         ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       ]),
     );

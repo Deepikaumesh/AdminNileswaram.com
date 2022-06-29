@@ -114,7 +114,6 @@ class _Event_Delete_DetailState extends State<Event_Delete_Detail> {
                 new Padding(padding: const EdgeInsets.only(top: 30.0),),
                 new Text(widget.list[widget.index]['name'], style: new TextStyle(fontSize: 15.0),  textAlign: TextAlign.justify,),
 
-
               ],
             ),
           ),

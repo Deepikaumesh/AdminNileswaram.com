@@ -74,6 +74,7 @@ class _News_UpdateState extends State<News_Update> {
                       hintText: "News Title", labelText: "News Title"),
                 ),
                 new TextField(
+                  maxLines: 10,
                   controller: controlleraddress,
                   decoration: new InputDecoration(
                       hintText: "Description", labelText: "Description"),
@@ -83,8 +84,8 @@ class _News_UpdateState extends State<News_Update> {
                   padding: const EdgeInsets.all(10.0),
                 ),
                 new RaisedButton(
-                  child: new Text("EDIT DATA"),
-                  color: Colors.blueAccent,
+                  child: new Text("Submit",style: TextStyle(color: Colors.white),),
+                  color: Colors.red.shade900,
                   onPressed: () {
                     UpdateData();
                     Navigator.of(context).push(

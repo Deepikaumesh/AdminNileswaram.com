@@ -160,6 +160,8 @@ class Note {
     required this.mobile,
     required this.website,
     required this.image,
+    required this.about,
+
   });
 
   final String name;
@@ -168,6 +170,7 @@ class Note {
   final String mobile;
   final String website;
   final String image;
+  final String about;
 
   factory Note.fromJson(Map<String, dynamic> json) => Note(
         name: json["name"],
@@ -176,6 +179,7 @@ class Note {
         phone: json["phone"],
         mobile: json["mobile"],
         website: json["website"],
+        about:json["about"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -185,6 +189,7 @@ class Note {
         "phone": phone,
         "mobile": mobile,
         "website": website,
+    "website":about,
       };
 }
 

@@ -1,11 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:untitled2/Main_Files/view_more.dart';
-
-import '../Admin_Display Catagory/Grocery_display.dart';
-import '../Admin_Display Catagory/Textlie_display.dart';
-import '../Admin_Display Catagory/Restaurant_Display.dart';
 import 'New_News_Display.dart';
 
 
@@ -41,7 +36,7 @@ class News_ContainerState extends State<News_Container> {
 
         GestureDetector(
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>New_News_Display()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>News_Display_with_delete()));
           },
           child: Text(
             "Read News>>",

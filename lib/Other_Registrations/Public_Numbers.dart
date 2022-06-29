@@ -194,7 +194,7 @@ class _Public_Numbers_RegistrationState extends State<Public_Numbers_Registratio
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Catagory',
+                    labelText: 'Enter Category',
                   ),
                   keyboardType: TextInputType.text,
                 ),

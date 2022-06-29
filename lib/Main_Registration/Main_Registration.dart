@@ -219,7 +219,7 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
                   decoration: new InputDecoration(
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
-                    labelText: 'Enter Catagory',
+                    labelText: 'Enter Category',
                   ),
                   keyboardType: TextInputType.text,
                 ),
